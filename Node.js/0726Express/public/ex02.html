@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  app.js에서 /login이라는 router 만든 뒤
+        제출 버튼을 눌렀을 때 /login router에 요청을 보내서
+        id: aischool pw: 123
+        로그인 성공 or 로그인 실패
+    -->
+    <form action="http://localhost:3002/Login" method="post">
+        <input placeholder="ID 입력" name="inputId" />
+        <br />
+        <input placeholder="PW 입력" type="password" name="inputPw" />
+        <input type="submit">
+    </form>
+</body>
+
+</html>

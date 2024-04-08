@@ -1,0 +1,108 @@
+<!-- 회원가입&로그인 관리 페이지
+    - 담당자 : ~
+      23.06.08 12:30 김ㅇㅇ 수정 - 중복체크 추가 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 회원가입 폼
+         -> action: ~기능으로 간다
+            post 방식으로 데이터 전송 시 패킷의 body 영역에 담아서 전송된다 -->
+    <form action="http://localhost:3005" method="post">
+        <table width="400px">
+            <!-- STEP1 시작 -->
+            <tr bgcolor="gray" height="50px">
+                <th colspan="2" align="left">Step1: 아이디/비번 입력</th>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td align="right">아이디</td>
+                <td><input type="text" name="id" /></td>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td align="right">비밀번호</td>
+                <td><input type="password" name="pw"></td>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td align="right">비밀번호 확인</td>
+                <td><input type="password" name="repw"></td>
+            </tr>
+            <!-- STEP1 끝 -->
+
+            <!-- STEP2 시작 -->
+            <tr bgcolor="gray" height="50px">
+                <th colspan="2" align="left">Step2: 개인정보</th>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td align="right">성별</td>
+                <td>
+                    <!-- radio 버튼, 체크박스 : name이 같아야 함 -->
+                    남성 <input type="radio" name="gender" value="남성">
+                    여성 <input type="radio" name="gender" value="여성">
+                </td>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td align="right">혈액형</td>
+                <td>
+                    <select name="blood">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>AB</option>
+                        <option>O</option>
+                    </select>
+                </td>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td align="right">생일</td>
+                <td><input type="date" name="birth"></td>
+            </tr>
+            <!-- STEP2 끝 -->
+
+            <!-- STEP3 시작 -->
+            <tr bgcolor="gray" height="50px">
+                <th colspan="2" align="left">Step3: 선호도</th>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td align="right">취미</td>
+                <td>
+                    <!-- checkbox : 선택된 값들이 배열 형태로 (['축구','야구'])로 넘어감 -->
+                    축구<input type="checkbox" name="hobby" value="축구">
+                    야구<input type="checkbox" name="hobby" value="야구">
+                    농구<input type="checkbox" name="hobby" value="농구">
+                </td>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td align="right"> 좋아하는 색</td>
+                <td><input type="color" name="color"></td>
+            </tr>
+            <!-- STEP3 끝 -->
+
+            <!-- STEP4 시작 -->
+            <tr bgcolor="gray" height="50px">
+                <th colspan="2" align="left">Step4: 적고 싶은 말</th>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td colspan="2">
+                    <textarea name="inputText" cols="56" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr bgcolor="whitesmoke" height="35px">
+                <td colspan="2" align="center">
+                    <input type="submit">
+                    <input type="reset">
+                </td>
+            </tr>
+            <!-- STEP4 끝 -->
+
+        </table>
+    </form>
+</body>
+
+</html>

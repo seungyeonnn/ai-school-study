@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/user/SelectOne">
+        <input name="InputId" />
+        <input type="submit" />
+    </form>
+    <!-- nunjucks 문법에서 값이 없을 때는 출력 자체가 되지 x
+        null, undefind
+     -->
+    <table border="1px solid black">
+        <tr bgcolor="coral">
+            <td>ID</td>
+            <td>PW</td>
+            <td>NICK</td>
+        </tr>
+        {%for item in rows%}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.pw}}</td>
+            <td>{{item.nick}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+<script>
+    //nunjucks 변수를 js에서 사용하는 법
+    //let data = '{{userInfo.id}}'
+    //console.log(data)
+</script>
+
+</html>
