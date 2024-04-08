@@ -1,0 +1,13 @@
+.titleBox {
+    margin: 20px
+}
+
+.movieBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.accor-box {
+    width: 25%;
+    margin-left: 40px;
+}

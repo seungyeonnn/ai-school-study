@@ -1,0 +1,142 @@
+/** autor: 정은우
+    230928
+ */
+
+/* Banner Start */
+.banner-container {
+    width: 100%;
+    color: white;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+
+
+}
+
+.banner-item {
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+}
+
+.banner-item::before {
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: linear-gradient(to right, black, transparent);
+}
+
+.banner-text-container {
+    position: absolute;
+    box-sizing: border-box;
+
+    padding: 0 50% 0 36px;
+
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    display: flex;
+    align-items: center;
+}
+
+.banner-text>h3 {
+    margin-bottom: 21px;
+}
+
+.banner-item>h3,
+.banner-item>p {
+    position: relative;
+    color: white;
+
+}
+
+.banner-container:hover {
+    cursor: pointer;
+    .banner-item {
+        transition: 0.3s ease-in-out;
+        transform: scale(1.1);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
+
+.banner-container:not(:hover) {
+    .banner-item{
+        transition: 0.2s ease-out;
+    }
+}
+
+
+/* Movie Slide Start */
+.movie-slide-card {
+    width: 20rem;
+    height: 14rem;
+    border-radius: 1rem;
+    margin: 32px 36px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.movie-slide-hover {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    padding: 12px 1rem 0 1rem;
+    text-decoration: none;
+}
+
+.movie-slide-hover:hover {
+    transition: 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.movie-slide-hover:not(:hover) {
+    transition: 0.2s ease-out;
+}
+
+.movie-slide-hover>div {
+    display: flex;
+
+}
+
+.movie-slide-hover>div>p {
+    gap: 3px;
+    margin-right: 3px;
+}
+
+.movie-slide-card:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.movie-slide-card:not(:hover) {
+    transition: 0.2s ease-out;
+}
