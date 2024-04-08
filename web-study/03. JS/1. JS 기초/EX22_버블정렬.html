@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //정렬 알고리즘
+        //1. 버블정렬
+        let arr = [10, 1, 6, 8, 3]
+
+        //i: 0 1 2 3
+        //i+1: 1 2 3 4
+        // if (arr[0] > arr[1]){
+        //     // 치환 : 두 개의 변수가 있을 때 두 변수의 값을 바꿔주는 것
+        //     let temp = arr[0]
+        //     arr[0] = arr[1]
+        //     arr[1] = temp
+        //     console.log(arr)
+        // }
+
+        // if (arr[1] > arr[2]){
+        //     let temp = arr[1]
+        //     arr[1] = arr[2]
+        //     arr[2] = temp
+        //     console.log(arr)
+        // }
+
+        // if (arr[2] > arr[3]){
+        //     let temp = arr[2]
+        //     arr[2] = arr[3]
+        //     arr[3] = temp
+        //     console.log(arr)
+        // }
+
+        // if (arr[3] > arr[4]){
+        //     let temp = arr[3]
+        //     arr[3] = arr[4]
+        //     arr[4] = temp
+        //     console.log(arr)
+        // }
+
+        //step1
+        for(let i = 0; i<=3; i++){
+            if (arr[i] > arr[i+1]){
+            // 치환 : 두 개의 변수가 있을 때 두 변수의 값을 바꿔주는 것
+            let temp = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = temp
+            }
+            console.log(arr)
+        }
+
+        console.log("====================")
+
+        //step2.
+        // 0>1, 1>2, 2>3
+        // i = 0 1 2
+        // i+1 = 1 2 3
+
+        for(let i = 0; i <= 2; i++){
+            if (arr[i] > arr[i+1]){
+            let temp = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = temp
+            }
+            console.log(arr)
+        }
+       
+            // if (arr[0] > arr[1]){
+            // // 치환 : 두 개의 변수가 있을 때 두 변수의 값을 바꿔주는 것
+            // let temp = arr[0]
+            // arr[0] = arr[1]
+            // arr[1] = temp
+            // }
+            // console.log(arr)
+        
+        
+            // if (arr[1] > arr[2]){
+            // // 치환 : 두 개의 변수가 있을 때 두 변수의 값을 바꿔주는 것
+            // let temp = arr[1]
+            // arr[1] = arr[2]
+            // arr[2] = temp
+            // }
+            // console.log(arr)
+        
+       
+            // if (arr[2] > arr[3]){
+            // // 치환 : 두 개의 변수가 있을 때 두 변수의 값을 바꿔주는 것
+            // let temp = arr[2]
+            // arr[2] = arr[3]
+            // arr[3] = temp
+            // }
+            // console.log(arr)
+
+        console.log("====================")
+        
+        //step3.
+        // 0>1, 1>2, 2>3
+        // i = 0 1 2
+        // i+1 = 1 2 3
+
+        for(let i = 0; i <=1; i++){
+            if (arr[i] > arr[i+1]){
+            let temp = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = temp
+            }
+            console.log(arr)
+        }
+       
+        //     if (arr[0] > arr[1]){
+        //     let temp = arr[0]
+        //     arr[0] = arr[1]
+        //     arr[1] = temp
+        //     }
+        //     console.log(arr)
+        
+        
+        //     if (arr[1] > arr[2]){
+        //     let temp = arr[1]
+        //     arr[1] = arr[2]
+        //     arr[2] = temp
+        //     }
+        //     console.log(arr)
+        
+        console.log("====================")
+
+        for(let i = 0; i <=0; i++){
+            if (arr[i] > arr[i+1]){
+            let temp = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = temp
+            }
+            console.log(arr)
+        }
+    </script>
+</body>
+</html>

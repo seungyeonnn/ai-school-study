@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Filter 함수
+        // 배열안에서 특정 조건에 해당되는 것만 추려낼 때 사용
+
+        const numList = [1,2,3,4,5,6]
+
+        //case 1.
+        // const isEven = num => num%2 == 0
+        // //filter를 통해 참인 애만 넘어옴
+        // const evenNum = numList.filter(isEven)
+        // console.log(evenNum)
+
+        //case 2.
+        const evenNum = numList
+                        .filter(num => num%2==0) //짝수인 애 골라와서
+                        .map(item => item*3)    // map으로 *3해서 반환해줌
+                        .filter(num => num > 10)  //10보다 큰 애들만 출력
+        console.log(evenNum)
+
+        
+
+    </script>
+</body>
+</html>

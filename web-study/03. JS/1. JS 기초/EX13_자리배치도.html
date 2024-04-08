@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        인원 수와 줄에 맞게 자리를 배치해보자!
+        
+        <조건문>
+        1. 사용자에게 인원 수를 입력 받는다 (현재 인원은 몇 명인가요?) - memNum
+        2. 한 줄에 몇 명씩 앉을지 입력받는다 (한 줄에 몇 명씩 앉나요?) - colNum
+        나누어 떨어지면 줄 수, 나머지가 남으면 한 줄을 늘려줘야함
+        3. 몇 줄이 나올지 조건문을 통해 결과를 얻는다 - rowNum
+        
+        <반복문>
+        4. for문 구조
+            4-1. 줄 수 (rowNum)을 조건으로 하는 바깥 for문
+            4-2. 칸 수 (colNum)을 조건으로 하는 이중 for문
+        5. 좌석번호(seatNum)
+
+        <추가>
+        6. 해당 좌석을 테이블처리 해주기!
+
+        주의사항! 하나 풀 때마다 console창에 제대로 된 결과를 본인이 뽑았는지 확인
+        */
+
+        let memNum = prompt('현재 인원은 몇 명인가요?')  
+        let colNum = prompt('한 줄에 몇 명씩 앉나요?') // 칸 수
+        let rowNum = 0
+        let seatNum = 0
+
+        console.log('인원:'+memNum+' 줄:'+colNum)
+
+        //줄 수 구하깅
+        if ((memNum % colNum) == 0){
+            rowNum = (memNum/colNum)
+        } else{
+            rowNum = parseInt(memNum/colNum) + 1
+        }
+        console.log('줄 수:'+rowNum)
+
+        //줄 수
+        for(let i =1; i <= rowNum; i++){
+            console.log(i)
+            for(let j = 1; j <= colNum; j++){
+                console.log('좌석'+j)
+                
+            }
+        }
+
+
+    </script>
+</body>
+</html>

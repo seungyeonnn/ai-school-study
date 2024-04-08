@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        👍<span id="number">0</span>
+    </p>
+    <button id="like">좋아요</button>
+    <button id="hate">싫어요</button>
+    <script>
+        //  좋아요/싫어요 버튼만들기 실습! 
+        // - 좋아요 버튼 누를 시, 숫자 1씩 증가 
+        // - 싫어요 버튼 누를 시, 숫자 1씩 감소 
+        // - 단, 0 밑으로는 숫자가 내려가지 않도록 
+
+        // STEP 1. 좋아요를 눌렀을 때 호출할 like 함수 생성 
+        //     1-1) 호출 될 때마다 id가 number인 요소를 가져올 것 
+        //     1-2) 그 요소 안에 있는 text가 필요함 
+        //     1-3) text를 형변환 +1 
+        
+        const like = () => {
+
+            console.log('like function')
+            let num = document.getElementById('number')   
+            //html에 있는 num을 가져올게~, 누를 때마다 저장된 숫자인 num(현 상황)을 가져오려면 함수 안에 써야함
+            // 밖에서 전역적으로 쓰면 +1 되어도 그대로 0
+            num.innerText = parseInt(num.innerText) + 1 //num의 innertext를 바꿔줄게
+        }
+
+        // STEP 2. 싫어요를 눌렀을 때 호출할 hate 함수 생성 
+        //     2-1) 호출 될 때마다 id가 number인 요소를 가져올 것
+        //     2-2) 그 요소 안에 있는 text가 필요해 
+        //     2-3) text를 형변환 -1 
+        //     2-4) 단, 2-3은 0이하로는 실행X 
+
+        const hate = () => {
+            console.log('hate function')
+            let num = document.getElementById('number') 
+            num.innerText > 0 ? num.innerText = parseInt(num.innerText) - 1 : num.innerText = 0
+            // num의 innerText가 0보다 크면 -1 해주고 아니면 0으로 고정해줄거야
+
+        }
+
+        // STEP 3. 각각 버튼에 이벤트
+        //     3-1) '좋아요' 버튼을 HTML 문서에서 가져올 것            
+        //     3-2) 가져온 요소를 클릭 시, like함수 호출 
+        // let likeBtn = document.getElementById('like').addEventListener('click',like)  
+        // html로 된 애를 가져와서 객체화 해야 .으로 할 수 있는 문법을 사용할 수 있음
+        // 그리고 너 계속 듣고있어! (addEventListener)
+
+        //     3-1) '싫어요' 버튼을 HTML 문서에서 가져올 것            
+        //     3-2) 가져온 요소를 클릭 시, hate함수 호출
+        //     단, STEP3를 진행할 때는 이벤트 리스너를 사용 
+        // let hateBtn = document.getElementById('hate').addEventListener('click',hate)            
+
+
+        // + 문법 1. 익명함수
+        // 재사용할 것x, 한 번 만 쓸 경우 사용 / 함수자리에 () => {함수내용}
+        let likeBtn = document.getElementById('like').addEventListener('click',() => {
+            console.log('like function')
+            let num = document.getElementById('number')   
+            num.innerText = parseInt(num.innerText) + 1
+        })
+
+        // + 문법2. query selector
+        // 접근해야하는건 똑같음. getElementById 대신 querySelector를 써서 가지고 오고 싶은 애의 선택자를 적어줌
+        // 계층적 구조에서 유리
+        // document.querySelector('#hate').addEventListener('click', hate)
+        // 복수로 가져오기 위해 (tagname, class name 등) / 얘네는 배열로 넘어와서 [1]이 됨
+        document.querySelectorAll('button')[1].addEventListener('click', hate)
+
+
+    </script>
+</body>
+
+</html>

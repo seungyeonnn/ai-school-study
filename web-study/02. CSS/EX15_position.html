@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 200px;
+            height: 600px;
+            background-color: gray;
+        }
+         .box{
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid black; */
+        }
+        
+        .child1{
+            background-color: #ff4949;
+            /* relative: 현재 위치를 기준으로 요소를 배치 */
+            position: relative;
+            /* top: -20px;
+            left: -20px; */
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .child2{
+            background-color: #f9ca24;
+            /* absolute: 최상단(웹 페이지 자체, body태그)의 위치를 기준으로 요소 배치 */
+            position: absolute;
+            /* top: 0;
+            left: 0; */
+            bottom: 0;
+            right: 0;
+        }
+        .child3{
+            background-color: #0984e3;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <!-- box class와 child 1,2,3를 가진 div -->
+        <div class="box child1"></div>
+        <div class="box child2"></div>
+        <div class="box child3"></div>
+    </div>
+</body>
+</html>

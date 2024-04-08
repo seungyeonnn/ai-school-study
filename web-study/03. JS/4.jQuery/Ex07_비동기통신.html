@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result-area">
+        <table border="1">
+            <tr>
+                <th>순위</th>
+                <th>영화명</th>
+                <th>개봉일</th>
+            </tr>
+
+        </table>
+    </div>
+    <button id="req-button">데이터 요청</button>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 데이터요청 클릭 시, 동작하는 이벤트 적용해보기!
+        $("#req-button").on("click", () => {
+            //alert("클릭")
+            let movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20230621"
+
+            //$.ajax(): 비동기통신을 지원하는 함수
+            $.ajax({
+                url: movieURL,
+                // 응답이 왔을 때 처리할 함수
+                success: (result) => {
+                    alert("요청성공!")
+                    // console.log(result)
+                    // console.log(result.boxOfficeResult)
+                    // console.log(result.boxOfficeResult.dailyBoxOfficeList)
+
+                    let movieList = result.boxOfficeResult.dailyBoxOfficeList
+                    // 박스오피스 순위, 영화이름, 개봉일을 콘솔창에 출력해보기!
+                    for (let i = 0; i < movieList.length; i++) {
+                        $('table').append(`
+                            <tr>
+                                <td>${movieList[i].rank}</td>
+                                <td>${movieList[i].movieNm}</td>
+                                <td>${movieList[i].openDt}</td>
+                            </tr>`)
+
+                    }
+
+                },
+                error: () => {
+                    alert("요청실패..")
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>

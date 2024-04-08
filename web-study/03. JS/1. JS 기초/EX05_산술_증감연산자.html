@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //산술 연산자 -> 사칙연산
+        // +를 제외한 나머지 연산은 문자열과 숫자타입 연산을 지원
+        // 문자열 + 숫자 -> 숫자가 문자열로 바뀐 후 붙여져서 출력(문자열 타입)
+        // 문자열 -*/% 숫자 -> 연산되어 숫자타입
+
+        let num1 = '10'
+        let num2 = 3
+
+        console.log(num1 + num2)
+        console.log(num1 - num2)
+        console.log(num1 * num2)
+
+        //주의! 나누기 연산자
+        // / -> 실제로 나눈 값을 가져옴
+        console.log(num1 / num2)
+
+        // % 나눈 나머지를 가져옴
+        console.log(num1 % num2)
+
+        //parseInt(값) -> 값을 Int(정수) 타입으로 바꾸겠습니다
+        console.log(parseInt(num1 / num2))
+
+        console.log('-----------------------------------')
+        // 증감연산자 -> 1씩 늘릴 것인지(++) 1씩 감소시킬 것인지(--)
+        // 전위, 후위 연산자
+        let num3 = 1
+        let num4 = 1
+        console.log(++num3) // 전위 증감연산자, 먼저 증가시키고 출력할 것
+        console.log(num4++) // 후위 증감연산자, 먼저 출력하고 증가시킬 것
+
+    </script>
+</body>
+</html>

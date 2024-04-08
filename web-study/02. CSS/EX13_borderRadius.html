@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* border-radius: 경계선을 부드럽게 만들어주는 속성
+            border - 위/아래 - 좌/우 - radius
+            ex) 위쪽 오른쪽을 둥글게? -> border-top-right-radius
+        */
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+
+            border-bottom-right-radius: 30%;
+            /*직사각형에서 모서리부분만 깎으려면 px
+                길이까지 고려해서 길게 깎으려면 % */
+            
+            /* 네 모서리 전부 둥글게 */
+                border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

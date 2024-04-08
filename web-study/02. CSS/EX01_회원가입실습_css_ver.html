@@ -1,0 +1,133 @@
+<!-- 회원가입&로그인 관리 페이지
+    - 담당자 : ~
+      23.06.08 12:30 김ㅇㅇ 수정 - 중복체크 추가 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 외부스타일 시트를 불러와서 HTML에 적용하는 방식 -->
+    <link rel="stylesheet" href="./css/EX01_style.css">
+
+    <!-- 내부스타일 적용방식 -->
+    <!-- <style>
+        /*CSS 언어를 사용할 수 있는 태그*/
+        /* table tag: width 400px
+           tr tag: background-color gray, height 50px (step1~4) 
+           tr tag: background-color whitesmoke height 35px
+           td tag: align right (only title tag)
+           textarea tag: resize none
+           td tag: align center (only last)
+        */
+        table {
+            width: 400px;
+        }
+        .tr-tit{
+            background-color: gray;
+            height: 50px;
+        }
+        .tr-content{
+            background-color: whitesmoke;
+            height: 35px;
+        }
+        .tr-content > td:first-child{
+            text-align: right;
+        }
+        .tr-content:last-child > td{
+            text-align: center;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- 회원가입 폼
+         -> action: ~기능으로 간다 -->
+    <form action="#" method="get">
+        <table>
+            <!-- STEP1 시작 -->
+            <tr class="tr-tit" >
+                <th colspan="2" align="left">Step1: 아이디/비번 입력</th>
+            </tr>
+            <tr class="tr-content" >
+                <td>아이디</td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr class="tr-content" >
+                <td>비밀번호</td>
+                <td><input type="password"></td>
+            </tr>
+            <tr class="tr-content" >
+                <td>비밀번호 확인</td>
+                <td><input type="password"></td>
+            </tr>
+            <!-- STEP1 끝 -->
+
+            <!-- STEP2 시작 -->
+            <tr class="tr-tit" >
+                <th colspan="2" align="left">Step2: 개인정보</th>
+            </tr>
+            <tr class="tr-content" >
+                <td>성별</td>
+                <td>
+                    남성 <input type="radio" name="gender" value="man">
+                    여성 <input type="radio" name="gender" value="woman">
+                </td>
+            </tr>
+            <tr class="tr-content" >
+                <td>혈액형</td>
+                <td>
+                    <select>
+                        <option value="">A</option>
+                        <option value="">B</option>
+                        <option value="">AB</option>
+                        <option value="">O</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="tr-content" >
+                <td>생일</td>
+                <td><input type="date"></td>
+            </tr>
+            <!-- STEP2 끝 -->
+
+            <!-- STEP3 시작 -->
+            <tr class="tr-tit" >
+                <th colspan="2" align="left">Step3: 선호도</th>
+            </tr>
+            <tr class="tr-content" >
+                <td>취미</td>
+                <td>
+                    축구<input type="checkbox" name="hobby" value="soccer">
+                    야구<input type="checkbox" name="hobby" value="baseball">
+                    농구<input type="checkbox" name="hobby" value="basketball">
+                </td>
+            </tr>
+            <tr class="tr-content" >
+                <td> 좋아하는 색</td>
+                <td><input type="color"></td>
+            </tr>
+            <!-- STEP3 끝 -->
+
+            <!-- STEP4 시작 -->
+            <tr class="tr-tit" >
+                <th colspan="2" align="left">Step4: 적고 싶은 말</th>
+            </tr>
+            <tr class="tr-content" >
+                <td colspan="2"> 
+                    <textarea cols="56" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr class="tr-content" >
+                <td colspan="2">
+                    <input type="submit">
+                    <input type="reset">
+                </td>
+            </tr>
+            <!-- STEP4 끝 -->
+
+        </table>
+    </form>
+</body>
+</html>

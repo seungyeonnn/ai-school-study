@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //정렬 알고리즘
+        //1. 버블정렬
+        let arr = [10, 1, 6, 8, 3]
+
+        /*  내 코드
+        for (let j = 4; j >=1; j--){
+            for (let i = j; i>=0; i--){
+                if (arr[i] > arr[i+1]){
+                let temp = arr[i]
+                arr[i] = arr[i+1]
+                arr [i+1] = temp
+                }
+                console.log(arr, i)
+            }
+        }
+        */ 
+
+        // //for (let j = 3; j >=0; j--){
+        //     for(let j = arr.length-2; j>=0; j--){
+        //     //순환하는 횟수, 몇 step까지 진행?
+        //     //배열의 길이에 따라 달라짐
+
+        //     for (let i = 0; i<=j; i++){ 
+        //         // 정렬의 범위, 작은 for문 한 번 정렬할 때 어디~어디까지 정렬할건지(0번째~3번째)
+        //         // 범위가 축소
+        //         if (arr[i] > arr[i+1]){      // 내림차순 정렬하려면 등호 반대로, 작은게 뒤로 감
+        //         let temp = arr[i]
+        //         arr[i] = arr[i+1]
+        //         arr[i+1] = temp
+        //         }
+        //         console.log(arr)
+        //     }
+            
+        // console.log("====================")
+        // }
+        bubbleSort()
+
+        // 함수 -> 코드의 재사용
+        function bubbleSort(){
+                for(let j = arr.length-2; j>=0; j--){
+                //순환하는 횟수, 몇 step까지 진행?
+                //배열의 길이에 따라 달라짐
+
+                for (let i = 0; i<=j; i++){ 
+                    // 정렬의 범위, 작은 for문 한 번 정렬할 때 어디~어디까지 정렬할건지(0번째~3번째)
+                    // 범위가 축소
+                    if (arr[i] > arr[i+1]){      // 내림차순 정렬하려면 등호 반대로, 작은게 뒤로 감
+                    let temp = arr[i]
+                    arr[i] = arr[i+1]
+                    arr[i+1] = temp
+                    }
+                    console.log(arr)
+                }
+                
+            console.log("====================")
+            }
+
+        }
+     
+    </script>
+</body>
+</html>

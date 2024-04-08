@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let startNum = 2
+        // let endNum = 30
+        // let num = 7
+        // let numArray = []
+
+        //mycode
+        //    function getPrimeNumber(startNum, endNum){
+        //     // 1. 소수들을 담을 배열 , 2. 이중 for문
+        //         for (let i = startNum; i <= endNum; i++){   //startNum~endNum까지 반복할거야
+        //             console.log(i)
+        //             for (let j = startNum; j < endNum; j++){  //num을 나눠줄거야, 근데 start~end까지를 넣어서
+        //                 let res = []
+        //                 res.push(i%j) 
+        //                 console.log(i,'%',j,'res:',res) 
+        //                 if (res == 0){
+        //                     numArray.push(i)
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     //console.log(numArray)
+        //    getPrimeNumber(startNum, endNum)
+
+
+        //primeNumber 소수판별 function
+        //약수가 자기자신, 1 두개일 때만 소수
+
+        //     function primeNumber(number){
+        //         //number의 약수의 개수를 판별
+        //         /*
+        //         1. 나눴을 때 나머지가 0
+        //         2. 1보다 큰 숫자
+        //         3. 자기자신보다 같거나 작은 숫자
+        //         4. ~부터 ~까지
+        //         */
+        //         let cnt = 0
+        //         for (let i = 1; i <= num; i++)  //i가 1부터 자기자신까지 변화
+        //             if (num%i == 0) {//num을 i로 나눴을 때 0이라면 약수
+        //                 cnt++   //소수가 있으면 1씩 증가
+        //             }
+        //             if (cnt == 2){  // 약수의 개수가 나,1 뿐이라 2개면 소수
+        //                 console.log('소수')
+        //             }
+        //             else {
+        //                 console.log('소수가 아님')  // 2개 이상이면 소수가 아님
+        //             }
+        //     }
+        //    //primeNumber(num)
+
+
+        //****mycode solved
+
+        // let startNum = 2
+        // let endNum = 30
+        // let numArray = []
+
+        // function getPrimeNumber(startNum) {
+        //     for (let j = startNum; j <= endNum; j++) {
+        //         console.log(j)
+        //         let cnt = 0
+        //         for (let i = 1; i <= j; i++)  //i가 1부터 자기자신까지 변화
+        //             if (j % i == 0) {//num을 i로 나눴을 때 0이라면 약수
+        //                 cnt++   //소수가 있으면 1씩 증가
+        //             }
+        //         if (cnt == 2) {  // 약수의 개수가 나,1 뿐이라 2개면 소수
+        //             console.log('소수')
+        //             numArray.push(j)
+        //         }
+        //         else {
+        //             console.log('소수가 아님')  // 2개 이상이면 소수가 아님
+        //         }
+        //     }
+        //     return numArray
+        // }
+
+
+        // console.log(getPrimeNumber(startNum, endNum))
+
+        let startNum = 2
+        let endNum = 30
+
+
+        function getPrimeNumer(sNum, eNum) {
+            // let cnt = 0 초기화 구문을 반복문 밖에 넣으면 cnt 초기화가 되지 않아서 기존 값에 ++가됨
+            let array = []
+            for (let i = sNum; i <= eNum; i++) {
+                let cnt = 0
+                for (let j = 1; j <= i; j++)  //i가 1부터 자기자신까지 변화
+                    if (i % j == 0) {//num을 i로 나눴을 때 0이라면 약수
+                        cnt++   //소수가 있으면 1씩 증가
+                    }
+                if (cnt == 2) {  // 약수의 개수가 나,1 뿐이라 2개면 소수
+                    console.log('소수')
+                    array.push(i)
+                }
+                else {
+                    console.log('소수가 아님')  // 2개 이상이면 소수가 아님
+                }
+
+            }
+            return array
+        }
+        console.log(getPrimeNumer(startNum, endNum))
+
+
+    </script>
+</body>
+
+</html>

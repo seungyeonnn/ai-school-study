@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //2. 선택정렬
+        //- 기준 위치를 정한다
+        //- 나머지 요소 중 가장 잘 어울리는 값을 탐색
+        //- 기준 위치에 어울리는 값을 할당하고 step 종료
+        let arr = [13, 56, 9, 1, 23]
+        /* let base = arr[0]
+
+        for (let j = 0; j <= 4; j++) {
+            for (let i = 1; i <= 4; i++) {
+                if (base > arr[i]) {
+                    let temp = base
+                    base = arr[i]
+                    arr[i] = temp
+                }
+            }
+            arr[j] = base
+            console.log(arr)
+            console.log('========================')
+        }
+*/
+        /*
+            base = arr [0부터1씩 증가, 3까지]
+            for (let i = 1부터 1씩증가,4까지 ; i <= 4 ; i++){
+                if
+            }
+        */
+
+
+
+        //1 step -> 기준 [0], 탐색하면서 가장 작은 것을 base에 담음
+        base = arr[0]
+
+        for (let i = 1; i <= 4; i++) {
+            if (base > arr[i]) {
+                let temp = base
+                base = arr[i]
+                arr[i] = temp
+            }
+        }
+
+        arr[0] = base //기준이 되는 자리에 base에 있는 놈 넣기
+        console.log(arr)
+        //2 step
+        base = arr[1]
+
+        for (let i = 2; i <= 4; i++) {
+            if (base > arr[i]) {
+                let temp = base
+                base = arr[i]
+                arr[i] = temp
+            }
+        }
+        arr[1] = base //기준이 되는 자리에 base에 있는 놈 넣기
+        console.log(arr)
+        console.log('========================')
+
+
+        //3 step
+        base = arr[2]
+
+        for (let i = 3; i <= 4; i++) {
+            if (base > arr[i]) {
+                let temp = base
+                base = arr[i]
+                arr[i] = temp
+            }
+        }
+        arr[2] = base //기준이 되는 자리에 base에 있는 놈 넣기
+        console.log(arr)
+        console.log('========================')
+
+        //4 step
+        base = arr[3]
+
+        for (let i = 4; i <= 4; i++) {
+            if (base > arr[i]) {
+                let temp = base
+                base = arr[i]
+                arr[i] = temp
+            }
+        }
+        arr[3] = base //기준이 되는 자리에 base에 있는 놈 넣기
+        console.log(arr)
+        console.log('========================')
+
+    </script>
+
+</body>
+
+</html>

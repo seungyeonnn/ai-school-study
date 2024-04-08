@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //비교연산자
+        // 느슨한 비교 ==(동등연산자, 같다) / !=(같지않다) / >= 크거나 같다 / <= 작거나 같다
+        // 강력한 비교 (일치연산자, 값과 타입까지 비교) === !== 일때는 같은지 다른지만 바교함
+        /* 
+        let num1 = 10
+        let num2 = 10   
+        console.log(num1 == num2) //true
+        console.log(num1 != num2) //false  
+        */
+
+        let num1 = 10
+        let num2 = '10'  //'10'으로 했을 때 숫자처럼 
+        console.log(num1 >= num2)  //false
+       // console.log(num1 >== num2)  >== 비교하면 타입까지 비교하려고 해서 오류
+        console.log(num1 != num2) //true
+
+
+        //조건 연산자(삼항연산자)
+        //조건식 ? true일 때 실행 : false일 때 실행
+        console.log( num1 == num2 ? '같은 숫자입니다' : '다른 숫자 입니다')
+
+        //문제
+        let a = 10 + 7 + "" //17
+        let b = 8 + "" + 2  //82
+        let c = "" + 5 + 2  //52
+
+        console.log(a, b, c)
+        
+
+
+    </script>    
+</body>
+</html>

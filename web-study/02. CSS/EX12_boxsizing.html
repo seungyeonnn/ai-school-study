@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Box-Sizing 요소의 크기를 화면에 표시하는 방식 */
+        div{
+            width: 500px;
+            border: 20px solid grey; /*경계선*/
+            padding: 20px;
+        }
+        /* 1) content-box: 기본값
+            - 내가 설정한 너비 = content의 너비
+                ex) 너비 500px해줘 -> content 500px 
+                padding border 값을 전혀 신경쓰지x, 값이 들어가면 간 만큼 크기가 커짐
+            2) border-box: 
+            - 내가 설정한 너비 = border 안쪽까지의 너비
+                content + padding + border = 내가 설정한 너비
+                padding border 값이 들어가도 크기가 커지지 않음(이미 준 것) 
+            
+            만약 내가 padding, border 값을 주더라도 전체 도형의 크기가 변하지 x면 좋겠다?
+            -> box-sizing: border-box
+        */
+        .bb{
+            box-sizing: border-box;
+        }
+            
+    </style>
+</head>
+<body>
+    <div class="cb">
+        <p>content-box</p>
+    </div>
+    <div class="bb">
+        <p>border-box</p>
+    </div>
+</body>
+</html>

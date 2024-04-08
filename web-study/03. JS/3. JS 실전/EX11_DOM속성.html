@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>input 태그 값 가져오기</h2>
+    <input type="text" id="inputText">
+    <button id="inputBtn">GET!</button>
+
+
+    <h2>이미지 태그 값 가져오고 바꿔보기</h2>
+    <img 
+    id="peng"
+    width="300" 
+    src="http://res.heraldm.com/content/image/2016/04/27/20160427001247_0.jpg">
+    <br />
+    <button id="handlePic">change!</button>
+    
+    <script>
+        // ** input태그 내에 사용자가 입력한 값을 가져와보자!
+        // 1-1. input 버튼에 이벤트 걸기
+        //get 버튼을 눌렀을 때, console창에 ck!
+        //inputBtn이라는 id를 가진 애를 html에서 가져올거야! 그리고 얘가 눌렸을 때 ck이라는 애를 콘솔에 띄워줄거양
+        document.getElementById('inputBtn').addEventListener('click', ()=>{
+            console.log('ck!')
+        // 1-2. input 안에 있는 값을 가져오기
+            let inputTag = document.getElementById('inputText')
+            console.log('input:',inputTag.value) 
+            // console.log('input:',inputTag.innerText) 
+            // -> 안에 있는 내용물(컨텐츠)를 가져오는데 input안에 값이 있는 건 아님
+            // value 값으로 가져와야함
+        
+        // 1-3. value 값 세팅, 값을 입력하고 나면 입력한 게 사라짐!!!!
+        inputTag.value = ''
+
+        })
+
+
+        // ** img 태그에 접근하고 수정해보자!
+        // 1-1. 현재 imgtag의 속성 값을 출력, 태그는 여러개일 수 있기 때문에 0번째 이미지 가져옴
+        let pic1 = document.querySelectorAll('img')[0]
+        console.log('pic : ',pic1)
+
+            // 속성 값을 가져오는 방법
+            //case1. getAttribute('속성이름') , 넓이 가져오고싶으면 width, 주소는 src
+            // 속성 값 전체
+            console.log('사진의 너비는?', pic1.getAttribute('width')) //300px
+            console.log('사진의 wnth는?', pic1.getAttribute('src'))
+            //case2. .속성이름 / 그 안에 들어가는 값만 들어옴
+            console.log('사진의 너비는?', pic1.width)  //300
+            console.log('사진의 주소는?', pic1.src)
+        //1-2) change 버튼을 클릭했을 때 사진이 변하도록
+        document.getElementById('handlePic').addEventListener('click', () => {
+                // Case1. .setAttribute('속성이름', '바꿀값')
+                // pic1.setAttribute('width','400px')
+                // // Case2. .속성 이름 = 값
+                // pic1.src = "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FNUCoj%2FbtrgvVoSDDv%2F7L6vJ8h7cUJvkBxDr1lyz1%2Fimg.jpg"
+        
+            // Quiz! 만약 버튼 클릭 시, 사진1이라면 사진2로, 사진2라면 사진1로 변경
+            // === my code ===
+            // if(pic1.id == "peng"){
+            //     pic1.src = "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FNUCoj%2FbtrgvVoSDDv%2F7L6vJ8h7cUJvkBxDr1lyz1%2Fimg.jpg" 
+            //     pic1.id = 'fox'
+            // } else if (pic1.id == 'fox'){
+            //     pic1.src="http://res.heraldm.com/content/image/2016/04/27/20160427001247_0.jpg"
+            //     pic1.id = 'peng'
+            // }
+            console.log(pic1.src)
+            if(pic1.src === "http://res.heraldm.com/content/image/2016/04/27/20160427001247_0.jpg")
+                pic1.src = "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FNUCoj%2FbtrgvVoSDDv%2F7L6vJ8h7cUJvkBxDr1lyz1%2Fimg.jpg" 
+            else{
+                pic1.src="http://res.heraldm.com/content/image/2016/04/27/20160427001247_0.jpg"
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

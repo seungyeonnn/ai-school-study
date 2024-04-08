@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 내가 가장 좋아하는 포켓몬 세 마리를 소개해보자! 
+        1. 포켓몬 리스트 (pokemonList) 라는 배열 선언
+        2. 내가 좋아하는 포켓몬 세 마리를 넣을 것
+            =>  name, type, age (객체)
+            ex) 메타몽, 변신, 1
+            [{}, {}, {}]
+        3. 문서에 출력
+        ===============
+        1. 메타몽
+         - 변신속성
+         - 1살
+         =============
+         2. 피카츄
+          - 전기속성
+          - 2살
+        */
+        let pokemonList = [{
+            name: '디그다',
+            type: '땅',
+            age: 1,
+            pic: 'https://data1.pokemonkorea.co.kr/newdata/pokedex/full/005001.png'
+        }, {
+            name: '질퍽이',
+            type: '독',
+            age: 2,
+            pic: "https://data1.pokemonkorea.co.kr/newdata/pokedex/full/008801.png"
+        }, {
+            name: '팬텀',
+            type: '고스트,독',
+            age: 2,
+            pic:"https://data1.pokemonkorea.co.kr/newdata/pokedex/full/009401.png"
+        }]
+
+
+        for(let i = 0; i < pokemonList.length; i++){
+            document.write(`
+            ${i+1}. ${pokemonList[i].name} <br />
+            <img width="150px" src=${pokemonList[i].pic} /><br />
+            - 속성: ${pokemonList[i].type}<br />
+            - 나이: ${pokemonList[i].age}<br />
+            =====================<br />
+
+        `)
+        }
+
+        // document.write(`
+        //     1. ${pokemonList[0].name} <br />
+        //     <img width="100px" src=${pokemonList[0].pic} /><br />
+        //     - 속성: ${pokemonList[0].type}<br />
+        //     - 나이: ${pokemonList[0].age}<br />
+        //     =====================<br />
+        // `)
+        // document.write(`
+        //     1. ${pokemonList[1].name} <br />
+        //     <img width="100px" src=${pokemonList[1].pic} /><br />
+        //     - 속성: ${pokemonList[1].type}<br />
+        //     - 나이: ${pokemonList[1].age}<br />
+        //     ===================== <br />
+        // `)
+        // document.write(`
+        //     1. ${pokemonList[2].name} <br />
+        //     <img width="100px" src=${pokemonList[2].pic} /><br />
+        //     - 속성: ${pokemonList[2].type}<br />
+        //     - 나이: ${pokemonList[2].age}<br />
+        //     ===================== <br />
+        // `)
+
+
+        // document.write('1. ',pokemonList[0].name,'<br />')
+        // document.write('- ', pokemonList[0].type,' 속성 <br />')
+        // document.write('- ', pokemonList[0].age,'살 <br />')
+        // document.write('======================<br />')
+
+        // document.write('2. ',pokemonList[1].name,'<br />')
+        // document.write('- ', pokemonList[1].type,' 속성 <br />')
+        // document.write('- ', pokemonList[1].age,'살 <br />')
+
+        // document.write('======================<br />')
+        // document.write('3. ',pokemonList[2].name,'<br />')
+        // document.write('- ', pokemonList[2].type,' 속성 <br />')
+        // document.write('- ', pokemonList[2].age,'살 <br />')
+
+    </script>
+</body>
+</html>

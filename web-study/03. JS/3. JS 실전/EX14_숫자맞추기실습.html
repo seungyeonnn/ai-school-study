@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon:400" rel="stylesheet">
+    <style>
+        body {
+            background: url("https://media.istockphoto.com/photos/clear-blue-sky-as-a-background-wallpaper-pastel-sky-wallpaper-picture-id608634136?k=20&m=608634136&s=170667a&w=0&h=QqB80Ci9iSHOw0OjdM1fNbEeDrSvHG7-YuXNf_TcQnE=");
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            height: 100vh;
+            font-family: "do hyeon";
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        }
+
+        #result-area,
+        #chance-area {
+            font-size: 1.5em;
+        }
+
+        #user-input {
+            width: 300px;
+            height: 50px;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 10px;
+            outline: 0;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        #btn-area {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>숫자 맞추기 게임</h1>
+
+        <div id="result-area">결과값이 여기 나옵니다!</div>
+        <div id="chance-area">남은 기회:5번</div>
+
+        <input type="text" id="user-input">
+
+        <div id="btn-area">
+            <button id="play-button" class="btn btn-success">확인</button>
+            <button id="reset-button" class="btn btn-danger">초기화</button>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        //    [숫자 맞추기 게임]
+        //     1. 랜덤 숫자를 생성
+        let ranNum = parseInt(Math.random() * 100) + 1
+        console.log(ranNum)
+        //     2. 유저는 숫자를 입력 후 확인버튼을 누른다
+
+
+        document.getElementById('play-button').addEventListener('click', () => {
+            console.log('확인버튼')
+
+            //  3. 유저가 입력한 값과 랜덤값을 비교한 후 결과를 웹 페이지에 출력
+            //  3-1. 유저가 입력한 값 === 랜덤숫자 -> 정답입니다!
+            //  3-2. 유저가 입력한 값 > 랜덤숫자 -> 입력한 숫자보다 작은 수 입니다.
+            //  3-3. 유저가 입력한 값< 랜덤숫자 -> 입력한 숫자보다 큰 수 입니다.
+            document.getElementById('user-input')
+            let number = document.getElementById('user-input')
+            let userNum = parseInt(number.value)
+            let count = 5
+            console.log('input: ', userNum)
+
+            if (userNum == ranNum) {
+                document.getElementById('result-area').innerText = "정답입니다!"
+            } else if (userNum > ranNum) {
+                document.getElementById('result-area').innerText = "입력한 숫자보다 작은 수 입니다."
+            } else if (userNum < ranNum) {
+                document.getElementById('result-area').innerText = "입력한 숫자보다 큰 수 입니다."
+            } else {
+                document.getElementById('result-area').innerText = "다시 입력해 주세요"
+            }
+
+            //    4.5번의 기회를 모두 소진하면 게임이 끝난다 (버튼은 비활성화됨)
+            //     ex) 게임이 종료 되었습니다.
+
+        })
+
+
+
+
+
+
+
+    //     5. 초기화버튼을 누르면 게임이 사라진다
+    //     6. 유저가 1~100범위에 포하되지 않는 숫자를 입력하면 기회는 감소하지 않는다
+    //     EX) 1~100범위에 포함되지 않는 숫자입니다. 다시 입력해주세요 출력
+    //     7. 유저가 한 번이라도 입력한 숫자를 또 입력하면 횟수는 감소하지 않는다
+    //     ex) 10은 한 번 입력했던 숫자 입니다. 다른 숫자를 입력해주세요. 출력
+
+
+    </script>
+</body>
+
+</html>

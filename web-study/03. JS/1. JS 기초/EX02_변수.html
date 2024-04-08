@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (0) var
+        // - 재선언이 가능
+        // - 재할당이 가능
+        // - 호이스팅 현상 o
+        console.log('var: ', name)
+        var name = '김ㅇㅇ'
+        /*변수 : 데이터를 담는 공간
+        변수키워드 변수이름 = 담을 데이터
+        ex) var num = 3
+
+        - 호이스팅: 코드가 실행되면 메모리에 변수/함수를 미리 저장
+                    마치 출석체크 하듯이!
+                    -> 협업에 있어서 불편함을 주게 됨!
+        이를 방지하고자, ES6문법 이후 새로운 변수가 등장
+        - let, const
+
+        ** 면접 질문! "var와 let의 차이점을 아시나요?"
+        A. let은 ES6 문법에서 새롭게 등장한 키워드로, 
+        호이스팅을 방지하기 위해 선언 전에는 TDZ에 데이터를 보관
+        협업을 하는데 있어서 유리한 환경을 제공한다.
+        */
+       var name = '유승연'
+       console.log('var: ', name)
+
+       // (1) let 
+       //let도 호이스팅이 일어나기는 하지만 TDZ(Temporal Death Zone)에 저장 해두고
+       // 선언이 되기 전까지 접근을 못하게 한다
+       
+       let name2 = '장원영'
+       // let name2 = '안유진' - 재선언 불가
+       name2 = '레이'
+       console.log('let: ', name2)
+
+       // (2) const: 상수, 변하면 안되는 값
+       const name3 = '김채원'
+       //const name3 = '사쿠라' - 재선언 불가
+       name3 = '카즈하'
+
+
+       /*변수 이름을 지어보자!
+        1) 첫 글자로 숫자를 사용할 수 없다! (ex. 1apple, 2apple) 
+        2) 변수명의 첫 글자는 영문자, $, _ 가능
+        3) JS의 예약어는 변수명으로 사용할 수 없다 (if, switch 등)
+        4) 의미 없는 변수명은 추천x (ex. a,b,c,d)
+        5) camelCase 사용 - 첫 단어는 소문자로 시작/ 다음부터는 대문자 
+            ex) JS - userName(camelCase) / python, CSS - user_name(snake_case)
+        
+       */
+
+    </script>
+</body>
+</html>

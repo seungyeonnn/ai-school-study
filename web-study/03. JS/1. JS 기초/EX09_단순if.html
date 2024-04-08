@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //조건문: 특정 조건이 
+        //성립 됐는지 안됐는지에 따라서 실행시키는 로직이 달라짐
+        let age = parseInt(prompt('나이를 입력해주세요'))
+        
+        //만약 age값이 20보다 크거나 같다면 '성인입니다.' 출력
+        /*if(조건식){
+            조건식이 true일 때 실행할 내용
+        }
+        조건식이 거짓이라면 실행 로직을 건너뛴다.
+        실행로직이 한줄이라면 중괄호는 생략 가능
+        */
+        if (age >= 20){
+            console.log('성인입니다.')
+        }
+        //조건이 참이라면 A를 실행, 거짓인 경우 B를 실행
+        //if~else 문
+        /*
+        삼항연산자 사용 가능 -> 조건식 ? A : B
+        if (조건식){
+            A
+        } else{
+            B
+        }
+        */
+        if (age >= 20){
+            console.log('성인입니다.')
+        } else{
+            console.log('미성년자입니다.')
+        }
+
+        
+    </script>
+</body>
+</html>

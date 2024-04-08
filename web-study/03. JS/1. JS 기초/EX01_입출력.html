@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JavaScript: 웹 페이지를 동적으로 제어하기 위해 고안된 언어
+        // (1) body 태그 가장 하단에 작성한다
+        // (2) 주석: ctrl + /
+        //         만약 여러 줄을 주석으로 만들고 싶다면 /*다중 주석처리 가능*/
+        
+
+        /*1. 출력문*/
+        // a. console.log() - console 창에 출력, *****
+        console.log('Hello World!')
+
+        //a-2. console.error() - 에러
+        console.error('Error!')
+
+        //a-3. console.warn() - 경고
+        console.warn('Warning')
+
+        // b. document.write()- 문서에 출력 , 잘 안쓰임
+        document.write('Hello World!')
+
+        // c. alert() - 알림 팝업창에 출력
+        //alert('pop!')
+
+        // 출력문 뜨는 순서 -> alert - document.write - console
+        //alert에서 오류나면 console이 뜨지x
+
+
+        /*2. 입력문*/
+        //a. 입력 창을 통한 입력문 (주관식) : prompt
+        //   리턴 타입이 string
+        //   숫자 123을 적더라도 prompt를 통해 받은 값이면 무조건 string
+        var dinner = prompt('어제 저녁 뭐 드셨나요?', '곱창전골')
+        console.log('어제 저녁은',dinner,'입니다')
+
+        //b. 예/아니오를 묻는 입력문 : confirm
+        //   리턴 타입이 boolean
+       var lunch = confirm('그럼 저랑 오늘 점심 드실래요?')
+       console.log(lunch)
+
+
+    </script>
+</body>
+</html>

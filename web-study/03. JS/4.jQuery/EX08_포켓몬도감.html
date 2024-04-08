@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'omyu_pretty';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #poke-list {
+            display: flex;
+            flex-wrap: wrap;
+            /* 페이지 너비에 따라 자동 줄바꿈 */
+            justify-content: space-between
+                /* 아이템들 사이의 간격, 
+            between의 경우 양끝이 끝으로 붙고 그 사이가 일정한 간격으로 정렬
+            around는 같은 간격으로 정렬 */
+
+        }
+
+        strong{
+            color:white
+        }
+
+        .poke-card {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 200px;
+            display: flex;
+            /* 태그 정렬 시 유용(수평정렬) */
+            flex-direction: column;
+            /* default: row, column은 수직 */
+            align-items: center;
+            /* 가운데 정렬 */
+            padding: 10px;
+            /* 박스 내부에 여백, 
+            기존 width 200px + 왼,오 10px씩 더해져서 박스크기도 커짐 */
+            box-sizing: border-box;
+            /* 기존 width 200px에서 180을 width로 쓰고 20px을 padding으로 줌. 박스크기 그대로 */
+            margin: 15px;
+            /* 바깥 여백, 카드끼리 여백 */
+            border-radius: 10px;
+            background-color: lightblue;
+        }
+
+        .poke-img {
+            height: 100px;
+            width: 100px;
+        }
+    
+        h1 {
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 0px #fff, 0 0 5px #fff, 0 0 5px #f9ca24, 0 0 20px #f9ca24, 0 0 25px #f9ca24, 0 0 30px #f9ca24, 0 0 35px #f9ca24;
+        }
+
+        body {
+            font-family: 'omyu_pretty';
+            font-size: 22px;
+            background-image: url("https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=60");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>✨나만의 포켓몬도감✨</h1>
+    <p><strong>총 <span id="total">0</span> 마리</strong></p>
+    <div id="poke-list">
+        <!-- <div class="poke-card">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                alt="" class="poke-img">
+            <span class="poke-id">1</span>
+            <span class="poke-name">이상해씨</span>
+            <span class="poke-species">씨앗포켓몬</span>
+            <span class="poke-height">키: <span>0.7</span></span>
+            <span class="poke-weight">몸무게: <span>6.9</span>kg</span>
+        </div> -->
+
+    </div>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 키, 몸무게 정보: https://pokeapi.co/api/v2/pokemon/{id or name}/
+        // 이름, 종 정보: https://pokeapi.co/api/v2/pokemon-species/1 
+
+        //포켓몬 도감 만들기
+        // 1. pockemon API에서 이름, 종, 키, 몸무게 4가지 정보 가져오기
+        // 2. 가져온 정보를 2개의 배열에 각각 저장하기
+        // 3. 각 배열의 내용을 태그에 출력하기
+        let speceiesList = [] // 이름, 종 데이터 객체 형태로 저장하는 배열
+        let pokemonList = [] // 키, 몸무게 데이터를 객체형태로 저장하는 배열
+
+        const getPokeData = (id) => {
+
+            const pokeURL = `https://pokeapi.co/api/v2/pokemon-species/${id}`
+            $.ajax({
+                url: pokeURL,
+                async: false,
+                // async 속성: 통신방식을 비동기 or 동기처리로 변경할 수 있는 속성
+                // true: 비동기 / false: 동기
+                // 동기 통신을 할지 비동기통신을 할지를 바꿔줌 -> 통신에 있어서 동기 통신을 제공
+                // 반복문 사용했을 때 순서가 꼬이는 경우 방지 가능
+                success: (result) => {
+                    // 서버로 부터 응답받은 데이터는 매개변수를 만들어야 사용할 수있따!!!!!
+                    //console.log(result.names[2].name, result.genera[1].genus)
+                    speceiesList.push({ name: result.names[2].name, genus: result.genera[1].genus })
+
+                    // 배열에 객체 넣으려면 {} 중괄호 쓰고 key value 넣어주기
+                },
+                error: () => {
+                    alert("요청실패")
+                }
+
+            })
+        }
+
+
+
+
+
+        const getPokeData2 = (id) => {
+            const pokeURL = `https://pokeapi.co/api/v2/pokemon/${id}`
+
+            $.ajax({
+                url: pokeURL,
+                async: false,
+                success: (result) => {
+                    //console.log(result.weight, result.height)
+                    pokemonList.push({ weight: result.weight, height: result.height })
+
+                },
+                error: () => {
+                    alert("요청실패")
+                }
+            })
+        }
+
+        // 포켓몬 카드를 그리는 함수 구현
+        // 이름, 종 , 몸무게, 키 정보를 가지는 배열을 입력값으로 받는 함수
+        // const drawPokemonCard = (species, pokemons) => {
+        //     // 반복문을 이용해서 모든 포켓몬카드를 resultHTML 변수에 저장하기
+        //     for (i = 0; i < 151; i++) {
+        //         let resultHTML =
+        //             `<div class="poke-card">
+        //             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i+1}.png"
+        //             alt="" class="poke-img">
+        //             <span class="poke-id">${i+1}</span>
+        //             <span class="poke-name">${species[i].name}</span>
+        //             <span class="poke-species">${species[i].genus}</span>
+        //             <span class="poke-height">키: <span>${pokemons[i].height}</span>m</span>
+        //             <span class="poke-weight">몸무게: <span>${pokemons[i].weight}</span>kg</span>
+        //         </div>`
+        //         // 생성된 포켓몬 카드를 id가 poke-list인 div태그에 출력
+        //         $("#poke-list").append(resultHTML)
+
+        //     }
+        //     console.log(speceiesList)
+
+        // }
+
+        const drawPokemonCard = (species, pokemons) => {
+            // 반복문을 이용해서 모든 포켓몬카드를 resultHTML 변수에 저장하기
+            let resultHTML = ''
+            for (i = 0; i < species.length; i++) {
+                    resultHTML +=
+                    `
+                    <div class="poke-card">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i+1}.png"
+                    alt="" class="poke-img">
+                    <span class="poke-id">${i+1}</span>
+                    <span class="poke-name">${species[i].name}</span>
+                    <span class="poke-species">${species[i].genus}</span>
+                    <span class="poke-height">키: <span>${pokemons[i].height/10}</span>m</span>
+                    <span class="poke-weight">몸무게: <span>${pokemons[i].weight/10}</span>kg</span>
+                </div>`
+                // 생성된 포켓몬 카드를 id가 poke-list인 div태그에 출력
+            }
+            $("#poke-list").append(resultHTML)
+            $("#total").text(species.length)  //총 몇마리인지
+            console.log(speceiesList)
+
+        }
+
+        for (let i = 1; i < 152; i++) {
+            getPokeData(i)
+            getPokeData2(i)
+        }
+        // console.log(speceiesList)
+        // console.log(pokemonList)
+        drawPokemonCard(speceiesList, pokemonList)
+
+
+
+
+    </script>
+</body>
+
+</html>

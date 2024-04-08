@@ -1,0 +1,19 @@
+    table {
+    width: 400px;
+    }
+    .tr-tit{
+    background-color: gray;
+    height: 50px;
+    }
+    .tr-content{
+    background-color: whitesmoke;
+    height: 35px;
+    }
+    /* tr-content 클래스 안에 있는 td의 첫번째 자식에게만 적용 */
+    .tr-content > td:first-child{
+    text-align: right;
+    }
+    /* 마지막에 있는 tr-content 클래스 안에 있는 td에만 적용 */
+    .tr-content:last-child > td{
+    text-align: center;
+    }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        #parent{
+            width: 200px;
+            height: 600px;
+            background-color: gray;
+        }
+         .box{
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid black; */
+        }
+        
+        .child1{
+            background-color: #ff4949;
+        }
+        
+        .child2{
+            background-color: #f9ca24;
+           
+        }
+        .child3{
+            background-color: #0984e3;
+            text-align: center;
+            line-height: 200px;
+            /* 한줄의 문장에 해당하는 경우
+                높이값과 같은 값을 주면 텍스트가 가운데로 오게할 수 있음
+                수직방향으로 가운데 정렬 */
+            font-weight: bold;
+            position: fixed;
+            right: 0;
+        }
+        .child3>a{
+            color: white;
+            text-decoration: none;
+            /* 텍스트 자체에 위/아래 등에 선을 어떻게 할것인지 */
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <!-- box class와 child 1,2,3를 가진 div -->
+        <div class="box child1"></div>
+        <div class="box child2"></div>
+        <div class="box child3">
+            <a href="#parent">TOP</a>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

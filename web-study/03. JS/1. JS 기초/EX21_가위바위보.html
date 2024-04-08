@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // 지금부터 가위바위보를 시작하겠습니다 
+        // STEP 1. 컴퓨터가 랜덤하게 가위, 바위, 보 중에 하나를 낸다 (comChoice)
+        //          => Math.random() -> ranNum 
+        //          => 배열의 인덱스 번호
+
+        let choiceArr = ['가위', '바위', '보']
+        let ranNum = parseInt(Math.random() * 3)
+        console.log(ranNum)
+        let comChoice = choiceArr[ranNum]
+
+        // STEP 2. 사용자에게 가위, 바위, 보 중에 하나를 입력받는다 (prompt) (myChoice)
+        //          "무엇을 내시겠습니까? [가위,바위,보]"
+       let myChoice=prompt('무엇을 내시겠습니까?')
+       
+        // ** comChoice, myChoice를 console창에 테스트 출력! 
+        console.log('com',comChoice)
+        console.log('me',myChoice)
+
+        let result = 0
+
+        // STEP 3. 가위바위보의 결과를 출력 
+        // document.write('당신의 승리입니다') /패배 / 무승부입니다!
+        // if(comChoice == myChoice){
+        //     document.write('무승부입니다!')
+        // } else{
+
+        // }
+        if (comChoice == myChoice){
+            document.write('무승부입니다!')
+        } else{
+            console.log('승패')
+            switch(myChoice){
+                case ('가위'):
+                    console.log('가위')
+                    comChoice == '보' ? document.write('당신의 승리입니다') : document.write('패배입니다')
+                case ('바위'):
+                    console.log('바위')
+                case ('보'):
+                    console.log('보')
+            }
+
+
+
+
+            // switch (comChoice){
+            //     case ('가위') :
+            //         myChoice == '보' ? document.write('당신의 승리입니다') : document.write('패배입니다')
+            //         console.log('가위')
+            //     case('바위') :
+            //         myChoice == '보' ? document.write('패배입니다') : document.write('당신의 승리입니다.')
+            //         console.log('바위')
+            //     case('보') :
+            //         myChoice == '가위' ? document.write('당신의 승리입니다') : document.write('패배입니다')
+            //         console.log('보')
+            // }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- table 태그: table 만들겠다고 선언하는 공간 -->
+    <table border="1px solid black">
+        <!-- table header -->
+        <tr>
+            <th>메뉴</th>
+            <th colspan="2">가격과 장소</th>
+        </tr>
+
+        <!-- table의 row(줄, 행)  -->
+        <tr>
+            <!-- table의 칸, 열 -->
+            <td>아이스 자몽허니블랙티</td>
+            <td rowspan="2">5,900</td>
+            <td>to go</td>
+        </tr>
+
+        <!-- 표 병합기능
+        1) 위, 아래 병합 -> rowspan="병합할 크기"
+        2) 좌, 우를 병합 -> colspan="병합할 크기"
+        -->
+
+        <!-- tip! tr > td*3 / tr아래에 td 3개-->
+        <tr>
+            <td>마라탕</td>
+            <td>here</td>
+        </tr>
+    </table>
+    <h3>실습</h3>
+    <table border="1px solid black">
+        <tr bgcolor="yellow">
+            <th>이름</th>
+            <th colspan="2">성별/주소</th>
+            <th>비고</th>
+        </tr>
+        <tr>
+            <td>황해도</td>
+            <td>남자</td>
+            <td>전주</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>선영표</td>
+            <td>여자</td>
+            <td>광주</td>
+            <td></td>
+        </tr><tr>
+            <td>정봉균</td>
+            <td>남자</td>
+            <td>순천</td>
+            <td></td>
+        </tr><tr>
+            <td>유승연</td>
+            <td>여자</td>
+            <td>이천</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

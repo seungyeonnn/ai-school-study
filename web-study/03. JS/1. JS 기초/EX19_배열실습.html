@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열 내 최대값 구하기!
+        let numList = [12, 9, 82, 3, 46, 96, 22]
+
+        // 결과: 배열 내 최대값은 82입니다.
+        let maxNum = 0
+
+        for (let i = 0; i<numList.length; i++ ){
+                console.log(numList[i])
+
+            if (maxNum < numList[i]){
+                maxNum = numList[i]
+            }
+        }
+
+        console.log(`배열 내 최대값은 ${maxNum}입니다`)
+
+        let maxNum2 = Math.max(...numList)
+        document.write('배열 내 최댓값은 '+ maxNum2)
+    </script>
+</body>
+</html>

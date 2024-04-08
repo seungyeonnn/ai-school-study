@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text">
+        <select id="fruits">
+            <option value="strawberry">딸기</option>
+            <option value="mango">망고</option>
+            <option value="pineapple">파인애플</option>
+        </select>
+        <input type="button" value="출력">
+    </form>
+
+    <p id="result"></p>
+    <p>선택한 과일 :<span id="selected_fruits"></span> </p>
+
+
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+        // 속성 선택자. input을 찾을 건데 그 중에서도 type이 button인 애를 찾을거양
+        $("input[type='button']").on('click', () => {
+            //alert("클릭")
+            //입력요소 (input의 값) 가져오기 .val()  == value(in js)
+            let $userInput = $("input[type='text']").val()
+
+            //변수명 앞에 $붙이면 제이쿼리로 작성했다는 뜻
+            console.log($userInput)
+
+            //유저가 입력한 값을 웹 페이지에 출력해보기!
+            //jQuery객체.text 사용
+            $('#result').text($userInput)
+
+            //select 태그의 내용이 바뀔 때 동작하는 이벤트
+            //user가 선택하는 행위를 할 때마다 이벤트가 동작
+
+        })
+        $("#fruits").on("change", () => {
+
+            console.log($("#fruits").val())
+            let $fruit = $("#fruits").val()
+
+            //선택한 과일의 정보를 웹 페이지에 출력하기
+            $("#selected_fruits").text($fruit)
+
+        })
+    </script>
+</body>
+
+</html>

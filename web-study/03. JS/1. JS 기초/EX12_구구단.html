@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 3px solid lightpink;
+            display: inline-block;
+            padding: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>구구단을 외우자!</h1>
+
+    <script>
+        // 미션! console창에 1단부터 9단까지 출력
+        for(let i = 2; i  <= 9; i++){
+            document.write('<div>')
+            document.write('<h1>'+i+'단</h1>')
+            //console.log(i+'단')
+            /* 이중 for문, 중첩 for문
+            - 구구단은 2~9단까지
+                각 단마다 1부터 9까지 반복
+            */
+           for(let j = 1; j <=9 ; j++){
+                document.write(i + '*' + j + '=' + i*j)
+                document.write('<br />')
+                
+           }
+           document.write('</div>')
+        }
+
+    </script>
+</body>
+</html

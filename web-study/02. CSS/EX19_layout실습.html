@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 1024px;
+            height: 768px;
+        }
+        #header{
+            height: 134px;
+        }
+        #nav{
+            height: 134px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #nav > div > a{
+            color: black;
+            text-decoration: none;
+            /* 요소의 크기 조절은 하고 싶은데 위치는 그대로 두고 싶은 경우
+            이걸 통해서 width, height 지정 가능 */
+            display: inline-block;
+            width: 100px;
+            height: 35px;
+            background-color: lightgray;
+            line-height: 35px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #content{
+            width: 724px;
+            height: 500px;
+            background-color: blue;
+        }
+        #side{
+            width: 300px;
+            height: 500px;
+            background-color: yellow;
+        }
+        #footer{
+            height: 134px;
+            background-color: green;
+        }
+        #container{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div id="nav">
+                <div>
+                    <a href="">SMHRD</a>
+                </div>
+                <div>
+                    <a href="">메뉴</a>
+                    <a href="">서비스</a>
+                    <a href="">고객지원</a>
+                </div>
+                <div>
+                    <a href="">로그인</a>
+                    <a href="">회원가입</a>
+                </div>
+            </div></div>
+        
+        <div id="container">
+            <div id="content">content</div>
+            <div id="side">side</div>
+        </div>
+        <div id="footer">footer</div>
+    </div>>
+</body>
+</html>

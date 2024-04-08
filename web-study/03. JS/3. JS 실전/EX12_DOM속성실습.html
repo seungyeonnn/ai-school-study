@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="name">
+    <button id="btn">변경!</button>
+    <img src="https://img.allurekorea.com/allure/2022/11/style_636df79253f91-1136x1200.png" width="200px">
+    <script>
+        let url1 = 'https://img.allurekorea.com/allure/2022/11/style_636df79253f91-1136x1200.png'
+        // 아이유사진
+        let url2 = 'https://cdn.mhns.co.kr/news/photo/201710/80596_134727_1149.png'
+
+        //STEP1. '변경'버튼 클릭 시, 사용자가 input 태그 안에 입력한 값을 감지
+        //1-1) 변경이라는 버튼을 눌렀을 때
+        document.getElementById('btn').addEventListener('click',()=>{
+            //1-2) input 태그 안에 있는 값을 가져와서 name이라는 변수에 넣어줄 것
+            let name = document.getElementById('name')//여기서 .value까지 해주면 나중에 입력 후에도 안비워짐
+            let pic1 = document.querySelectorAll('img')[0]
+            //getElementByTagName('img')[0]
+             console.log('name:',name)
+
+             
+        //1-3) 만약, name이 아이유라면 아이유 사진으로, name이 수지라면 수지사진으로 변경
+        // 만약 다른 사진을 원하면 원하는 사진으로 바꿔도 됨
+            if (name.value == "아이유"){
+                pic1.src = url2
+            } else if (name.value =="수지"){
+                pic1.src=url1
+
+            }else{
+            // 1-4) 조건 이외의 텍스트 입력 시, alert로 잘못 입력하셨습니다!
+                alert("잘못 입력하셨습니다!")
+            }
+            name.value = ""
+        })
+
+       
+    </script>
+</body>
+
+</html>

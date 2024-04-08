@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // reduce() -> 앞에서부터 검사, reduceRight() -> 뒤에서부터 검사
+        // - 하나의 배열이 있다고 가정했을 때, 그 배열을 누적시켜서 하나의 값을 만들어준다
+
+        const arr = [1,2,3,4,5]
+
+        //누적값
+        const result = arr.reduce((x,y) => x+y)
+        console.log(result)
+        // x는 이전 값, y는 그 다음 값
+
+        //최대값
+        const result2 = arr.reduce((x,y) => x>y ? x : y) 
+        // 배열을 처음부터 끝까지 훑어줄거야, 2개 인자 받을거라 괄호 써줄겡
+        console.log(result2)
+
+        // 문자열 뒤집기
+        let str = '로꾸꺼 로꾸꺼 로꾸꺼 말해말'
+        // 스프레드를 통해 str을 배열화
+        let strArr = [...str].reduceRight((x,y) => x+y)
+        console.log(strArr)
+
+        
+
+    </script>
+</body>
+</html>

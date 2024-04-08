@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이미지 태그
+        src - 이미지 경로
+        alt - 오류 발생 시 보여지는 텍스트  
+    --> 
+
+    <!-- 절대경로 : 어떤 폴더나 파일이 가진 고유한 경로 -->
+    <img src="http://res.heraldm.com/content/image/2016/04/27/20160427001247_0.jpg" alt="이미지를 불러올 수 없습니다">
+    <br>
+    <!-- 현재경로 : 특정위치 기준으로 폴더나 파일을 접근하는 경로
+         현재 위치 기준 : ./폴더명/파일명.확장자 or ./파일명.확장자
+         루트위치 기준 : 최상위 폴더에서 접근하는 방식
+         상위 위치 기준 : 상위 폴더로 올라가서 접근하는 방식
+                        -> ../폴더명/파일명.확장자 or ../파일명.확장자
+                        ../ 한 번 상위 폴더로 올라가는 것
+                        ./ 현재 위치에 있는 파일
+                        / 폴더로 들어갈 때
+
+     -->
+    <img src="img/p1.jpg" alt="" width="150" height="150">
+    <img src="./img/p3.jpg" alt="" width="150" height="150">
+    <img src="/HTML/img/p2.jpg" alt="" width="150" height="150">
+</body>
+</html>

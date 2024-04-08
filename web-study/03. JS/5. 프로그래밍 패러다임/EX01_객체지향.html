@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 김채원, 장원영, 카리나 객체 3개 생성
+
+        /*
+        let person1 = {
+            name: "김채원",
+            age: 22
+        }
+
+        let person2 = {
+            name: "장원영",
+            age: 18
+        }
+
+        let person3 = {
+            name: "카리나",
+            age: 23
+        }
+        */
+       /*
+       class와 object를 함께 사용
+       class: 각 객체가 가진 정보를 추상화하영 만든 설계도
+       object: 클래스로부터 탄생한 개체
+
+       */
+
+        // 1. Class를 선언해보자!
+        class Person{
+            //생성자 -> 클래스로 객체를 생성할 때
+            //          꼭 가져가야하는 데이터(변수)를 초기화할 때 사용하는 기능
+            constructor(name, age){    //생성자를 의미함, 무엇을 넣어서 생성할건지(객체를 작성)
+                this.name = name    //이 person의 이름은 매개변수로 받아온 name임
+                this.age = age      //이 person의 나이는 매개변수로 받아온 age야
+            }  
+            //함수, 클래스가 할 수 있는 행위
+            speak(){
+                console.log(`제 이름은 ${this.name}입니다.`)//그냥 name은 지역변수라 쓸 수 없음. 내가 만든 costructor의 이름이야!하고 this써줘야함
+            }
+        }
+
+        // 2. 우리가 만든 class(붕어빵 틀)를 통해서
+        //    실존하는 object (붕어빵)을 만들어보자!
+        let person1 = new Person('김채원', 22)
+        console.log(person1)
+        person1.speak()
+        
+        let person2 = new Person('장원영', 18)
+        console.log(person2)
+        person2.speak()
+
+        let person3 = new Person('카리나', 23)
+        console.log(person3)
+        person3.speak()
+
+        //객체생성 실습!
+        //GameChar라는 클래스를 하나 생성
+        // => 이름(name) 체력(hp) 마력(mp)
+        // => 공격(attack)이라는 기능 존재
+
+        //이름이 티모인 체력30, 마력70인 객체
+        //alert 캡틴 티모 공격~~ 이라고 띄워주기
+        
+        class GameChar{
+            constructor(name, hp, mp){
+                this.name = name
+                this.hp = hp
+                this.mp = mp
+            }
+            attack(){
+                alert(`캡틴 ${this.name} 공격!`)
+            }
+        }
+
+        let timo = new GameChar('티모', 30, 70)
+        timo.attack()
+
+
+    </script>
+</body>
+</html>

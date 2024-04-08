@@ -1,0 +1,79 @@
+body{
+    background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Nanum Gothic";
+}
+
+.container{
+    background-color: white;
+
+    /* vh: viewport height로 현재 브라우저 높이를 꽉 채울 때 100vh를 사용 */
+    height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 70px;
+    overflow: auto;
+}
+
+.input-area{
+    display: flex;
+    margin-bottom: 10px;
+}
+#add-button{
+    margin-left: 5px;
+}
+
+.task-tabs{
+    display: flex;
+    border: 1px solid gray;
+}
+
+.task-tabs > div{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.task-tabs > div:hover{
+    background-color: #00a8ff;
+    color:white;
+}
+
+.task-area{
+    position: relative;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.task span{
+    box-sizing: border-box;
+    padding: 10px;
+    line-height: 38px;
+}
+
+.task-done{
+    background-color: lightgray;
+}
+
+.task-done > span{
+    text-decoration: line-through;
+}
+
+.button-area{
+    display: flex;
+    padding: 10px 10px 10px 0;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.button-area > button{
+    margin-left: 10px;
+} 

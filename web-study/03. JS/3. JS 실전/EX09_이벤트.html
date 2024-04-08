@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="txt">h1태그 컨텐츠</h1>
+    <!-- 핸들러용 -->
+    <button onclick="popUp()">직접 작성</button>
+    <!-- 버튼을 클릭 했을 때 팝업이라는 함수를 호출할거다! () 필수
+    누군가가 나를 클릭 한다면 이것을 실행해 주세요 -->
+    <button id="btn_han">핸들러용 버튼</button>
+
+    <!-- 리스너용 -->
+    <button id="btn_lis">리스너용 버튼</button>
+    <button id="btn_event">이벤트 객체용 버튼</button>
+
+    <script>
+        /* EVENT = 특정요소에 원하는 이벤트를 부여해보자!
+        ex) click, mouseover, mouseout, change ,,, 
+
+        eventHandler vs eventListener
+        1) eventHandler 
+            - 하나의 요소 당 하나의 이벤트만 부여 가능
+        2) eventListener
+            - 하나의 요소 당 여러 개의 이벤트를 부여 가능
+
+        Misson! 각각의 버튼 클릭 시, id가 txt인 요소의 컨텐츠 값을 팝업창으로 띄워줄 것!
+
+        미션을 위한 준비물: 팝업창을 출력하는 함수
+        
+        */
+
+        const popUp = () => {
+            let h1Tag = document.getElementById('txt')
+            //id가 txt인 애를 가져와서
+            alert(h1Tag.innerText)
+            // innertext만 alert로 띄워줄게
+        }
+
+        const popUp2 = () => {
+            let h1Tag = document.getElementById('txt')
+            //id가 txt인 애를 가져와서
+            alert('두 번째 팝업창: '+h1Tag.innerText)
+            // innertext만 alert로 띄워줄게
+        }
+
+        // case1. HTML 태그에 직접 함수의 이름을 명시하는 방법
+        //  onClick 사용 -> <button onClick = "popUp()">직접작성</button>
+        // 단점: 하나의 요소 당, 하나의 이벤트만 처리 가능, 함수명이 노출
+
+
+        // case2. 이벤트 핸들러
+        // '핸들러용 버튼'을 클릭 했을 때, popUp 함수를 호출
+        // 핸들러 버튼이 html영역에 있으니 JS 영역으로 가져와야함
+        // -> document로 접근
+        // id가 ~인 애를 가져올거야 getElementById('btn_han')
+        // 단점: 하나의 이벤트만 처리 가능, 1:1 이벤트 처리
+        let btn1 = document.getElementById('btn_han')
+        console.log('btn: ', btn1)
+        btn1.onclick = popUp
+        // btn1.onclick = popUp2 -> 위나 아래 팝업창이 하나만 뜸, 하나의 이벤트만 처리가 가능해서
+        // btn1이라는 애는 객체로 가져와짐, 
+        // 얘의 속성인 onClick을 했을 때 popUp을 가져오께
+        //콜백함수라, popUp에 ()가 있는 경우 자동으로 실행되는 것
+
+
+        // case3. 이벤트 리스너
+        // addEventListener(관리할 이벤트(click, mouse등), 함수(해당 이벤트를 리스너가 들었을때 어떤함수를 실행시켜 줄 것인ㄹ지))
+        // 장점: 다중 이벤트 등록 가능
+        // 단점: 코드가 길어진다
+        let btn2 = document.getElementById('btn_lis')
+        btn2.addEventListener('click',popUp)
+        //click이 될 때까지 계속 듣고 있어! 만약 click이 되면 popUp함수 실행해
+        //함수 안에 함수가 들어갈 때는 () 안적어도 됨
+        btn2.addEventListener('click',popUp2) //가능
+
+        // 콜백함수 = 함수 안에 들어있는 함수
+
+        // ex10.01 이벤트 실습.html에 있는 익명함수! 참고할 것
+
+        //case4. 이벤트 객체
+        // 내가 이벤트를 준 그 친구에 대한 타겟을 뽑아와서 리스너를 걸어줄겡 / 익명함수에 fuction(){}
+        //모든 이벤트에는 매개변수가 있음 -> 이벤트가 일어나는 대상을 가져올 수 있는 것
+        document.querySelector('#btn_event').addEventListener('click',(event)=>{     
+           
+            // 내가 클릭한 그 대상이 뜸 -> 매개 변수.target / 매개변수에 event대신 e도 많이 씀
+            console.log('이벤트 객체', event.target.innerText)
+        })
+
+    </script>
+</body>
+
+</html>

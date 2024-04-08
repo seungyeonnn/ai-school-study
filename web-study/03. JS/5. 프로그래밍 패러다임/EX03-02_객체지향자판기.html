@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class machine{
+            constructor(money, water, coke, juice) {
+                this.money = parseInt(prompt('돈을 넣어주세용'))
+                this.menu = prompt('무엇을 드시겠습니까?\n [1]물 - 700원 [2] 콜라 - 1500원 [3] 주스 - 2000원')
+                this.water = water
+                this.coke = coke
+                this.juice = juice
+            }
+        exportProduct(){
+            if(this.product == 1){
+                this.money = this.money - 700
+                this.water = this.water -1
+                alert("물 나왔습니당")
+            } else if (this.product == 2) {
+                this.money = this.money - 1500
+                this.coke = this.coke -1
+                alert("콜라 나왔습니당")
+            }else if (this.product == 3) {
+                this.money = this.money - 2000
+                this.juice = this.juice -1
+                alert("주스 나왔습니당")
+            }
+            console.log('현재 잔돈은', this.money, '원 입니다.')
+            console.log(this)
+            
+        }
+        change(){
+            let change = this.money
+            let thouWon = parseInt(this.money / 1000)
+            let hundWon = parseInt((this.money%1000) / 500)
+            let tenWon = parseInt(((this.money%1000) % 500)/100)
+
+            console.log(`잔돈입니다~ 천원짜리${thouWon}개, 오백원짜리 ${hundWon}개, 백원짜리 ${tenWon}개 입니다.`)
+        }
+        }
+
+        const gjMachine = new machine(0, 5, 10, 7)
+        gjMachine.exportProduct()
+        gjMachine.change()
+        const bsMachine = new machine(0, 5, 10, 7)
+        bsMachine.exportProduct()
+        bsMachine.change()
+        
+    </script>
+</body>
+</html>

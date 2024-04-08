@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 자신이 좋아하는 것을 5가지 담은 배열을 생성 
+        // 2. 배열 출력하기 (document.write) 
+        //     제가 좋아하는 것은 ~,~,~,~,~ 입니다! 
+        let likeList = ['오버워치', '닭가슴살', '비', '집', '우주']
+        document.write('제가 좋아하는 것은 ', likeList, '입니다!')
+        document.write('<hr />')
+        
+        // 3. 배열의 마지막 요소를 제거하시오.
+        // 4. 배열 출력하기 (document.write) 
+        //     제가 좋아하는 것은 ~,~,~,~ 입니다! 
+        likeList.pop()
+        document.write('제가 좋아하는 것은 ', likeList, '입니다!')
+        document.write('<hr />')
+        
+        // 5. 배열의 마지막 요소에 '코딩' 추가 
+        // 6. 배열 출력하기 (document.write) 
+        //     제가 좋아하는 것은 ~,~,~,~,코딩 입니다! 
+        likeList.push('코딩')
+        document.write('제가 좋아하는 것은 ', likeList, '입니다!')
+        document.write('<hr />')
+        
+        // 7. 배열 속 코딩이 존재하는지 확인 => document.write 
+        //     "저는 코딩을 좋아합니다!" 출력
+        if (likeList.includes('코딩') == true){
+            document.write('저는 코딩을 좋아합니다!')
+        }
+        document.write('<hr />')
+
+        //if 대신 삼항연산자로도 가능
+        likeList.includes('코딩') == true 
+        ? document.write('저는 코딩 좋아해요')
+        :document.write('저는 코딩을 싫어해요')
+        
+        // 8. 기존 배열 속 인덱스 1번부터 3개의 데이터를 삭제 
+        // 9. 최종 배열 출력하기 (document.write) 
+        //     제가 좋아하는 것은 ~,코딩 입니다! 
+        likeList.splice(0, 3, )
+        document.write('제가 좋아하는 것은 ', likeList, '입니다!')
+
+        let word = []
+        let start = prompt()
+        word = start
+        console.log(word)
+
+    </script>
+</body>
+</html>

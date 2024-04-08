@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1Tag">클릭 한 번 해볼까요?</h1>
+    <button id="h1Btn" onclick="ckh1Btn()">h1 태그 생성</button>
+    <button id="aBtn" onclick="ckaBtn()">a 태그 생성</button>
+    <button id="ulBtn" onclick="ckulBtn()">ul 태그 생성</button>
+    <div id="box"></div>
+    <script>
+        /*
+        누른 버튼에 따라 각각 다른 값들이 id가 box인 div안에 누적되도록
+        id가 box인 요소에 접근
+        만약 => h1Btn => <h1>h1입니다.</h1>
+            => aBtn => <a href="www.google.com">Google로 이동</a>
+            => ulBtn => <ul><li>마라탕</li></ul>
+        */
+
+        let box = document.getElementById('box')
+        // 비어있는 공간을 가져와서 그 공간을 활용
+
+
+        const ckh1Btn = () => {
+            console.log('h1 btn')
+            //box를 가져와서 안에 내용ㅇ을 바꿔줌
+            box.innerHTML += '<h1>h1입니다.</h1>'
+            //누적해주려면 누적연산자 += 사용해야함
+        }
+        const ckaBtn = () => {
+            console.log('a btn')
+            box.innerHTML += '<a href="www.google.com">Google로 이동</a>'
+        }
+        const ckulBtn = () => {
+            console.log('ul btn')
+            box.innerHTML += '<ul><li>마라탕</li></ul>'
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>랜덤게임을 해보자!</h1>
+    <script>
+        // 1. 랜덤한 수를 하나 뽑아준다
+        let ranNum = parseInt(Math.random() * 100)+1
+        // 0~1사이 숫자만 뽑아주기 때문에 100까지의 수를 원하면 *100
+        // 소수점 버리기 위해 parseInt
+        // 컴퓨터는 0부터 세기 때문에 0~99까지만 나옴, 1~100원하면 +1
+
+        console.log(ranNum)
+        // 2. 사용자에게 숫자를 입력받아준다
+        // 3. 만약, 사용자가 입력한 숫자 > 랜덤한 숫자 
+        // -> '입력한 숫자보다 작은 수 입니다 ' alert
+        // 4. 만약, 사용자가 입력한 숫자 < 랜덤 숫자
+        // -> '입력한 숫자보다 큰 수 입니다.'
+        // 5. 만약 사용자 숫자 == 랜덤숫자 -> 정답입니다 축하합니다(document.write)
+        
+        //힌트
+        //a.prompt의 리턴타입은?
+        //b. 반복되는 작업과 아닌 작업을 구분할 것
+        
+        
+        
+        while(true){
+            let ans = Number(prompt('숫자를 입력해 주세요'))
+
+            if (ans > ranNum){
+                alert('입력한 수보다 작은 수 입니다.')
+            } else if (ans < ranNum){
+                alert('입력한 수보다 큰 수 입니다.')
+            } else{
+                document.write('정답입니다. 축하합니다!😊🎉🎉')
+                break
+            }
+        }
+
+    </script>
+</body>
+</html>

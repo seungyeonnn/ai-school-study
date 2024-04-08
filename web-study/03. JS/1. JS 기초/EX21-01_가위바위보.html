@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let array = ['가위', '바위', '보']
+        // 지금부터 가위바위보를 시작하겠습니다 
+        // STEP 1. 컴퓨터가 랜덤하게 가위, 바위, 보 중에 하나를 낸다 (comResult)
+        //          => Math.random() -> ranNum 
+        //          => 배열의 인덱스 번호
+        let ranNumCum = parseInt(Math.random() * 3)
+        console.log(ranNumCum)
+        let comResult = array[ranNumCum]
+
+        // STEP 2. 사용자에게 가위, 바위, 보 중에 하나를 입력받는다 (prompt) (userResult)
+        //          "무엇을 내시겠습니까? [가위,바위,보]"
+        let userResult = prompt('무엇을 내시겠습니까?')
+
+        // ** comResult, userResult를 console창에 테스트 출력! 
+        console.log('com', comResult)
+        console.log('me', userResult)
+
+
+        // STEP 3. 가위바위보의 결과를 출력 
+        // do\coment.write('당신의 승리입니다') /패배 / 무승부입니다!
+
+        // if (userResult == '가위'){
+        //     if(comResult == '보'){
+        //         document.write('사용자 승리')
+        //     } else if (comResult == '바위'){
+        //         document.write('패배')
+        //     } else {
+        //         document.write('무승부')
+        //     }
+
+        // } else if (userResult == '바위'){
+        //     if(comResult == '보'){
+        //         document.write('패배')
+        //     } else if (comResult == '가위'){
+        //         document.write('승리')
+        //     } else {
+        //         document.write('무승부')
+        //     }
+        // } else{     //사용자가 보를 냈을 때
+        //     if(comResult == '바위'){
+        //         document.write('승리')
+        //     } else if (comResult == '가위'){
+        //         document.write('패배')
+        //     } else {
+        //         document.write('무승부')
+        //     }
+
+        // }
+
+        // 삼항연산자 풀이
+        let result = "" //결과
+
+        if (userResult === comResult){
+            result = "무승부"               //true가 나오면 else if 비교x, if문 빠져나옴
+        } else if(userResult == '보'){
+            result = comResult === '바위' ? "승리" : "패배"
+        } else if (userResult == '가위') {
+            result = comResult === '보' ? '승리' : '패배'
+        } else if (userResult == '바위') {
+            result = comResult === '가위' ? '승리' : '패배'
+        } 
+
+        document.write("결과는 "+result+'입니다.')
+
+    </script>
+</body>
+
+</html>

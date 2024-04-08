@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>🍔햄버거를 주문하자!</h1>
+    <script>
+        /*
+        step1.
+        1-1. 햄버거를 제작하는 함수를 만들어라 : makeBurger
+            (이때, 화살표함수를 이용해서 만들 것)
+        1/2. 누군가가 햄버거 만드는 함수를 호출하면
+            문서에 (document.write) 빵깔기, 토마토올리기, 패티올리기, 빵닫기
+            (이때 사용자가 희망한 메뉴의 패티를 올릴 것
+            ex. 치즈버거 -> 치즈패티 올리기, 핫치킨버거 -> 핫치킨패티)
+        1-3. 햄버거의 가격은 5000원임, 5000원을 반환
+        */
+
+        const makeBurger = (menu) => {
+            document.write('빵깔기<br />')
+            document.write('토마토올리기<br />')
+            document.write(menu+'패티 만들기<br />')
+            document.write('빵닫기<br />')
+            document.write(menu+'버거 완성<br />')
+            return 5000
+        }
+
+        //step2.
+        //  2-1. 콜라를 만드는 함수를 작성, 가격 2000원
+        //      문서에 '콜라완성!'
+        //  2-2. 감자튀김 만드는 함수를 작성, 가격은 1500원
+        //      문서에 '감튀완성'
+        const makeCoke = () => {
+            return 2000
+        }
+
+        const makeFries = () => {
+            return 1500
+        }
+
+        //step3. 
+        //(1) 사용자에게 먹고 싶은 햄버거 메뉴를 입력 받습니다
+        //      ex. 불고기, 치즈, 핫크리스피
+        let burgerMenu = prompt('🍔햄버거 종류를 입력해 주세요🍔') 
+
+        //(2) 사용자에게 세트메뉴를 시킬지, 단품메뉴를 시킬지 입력 받습니다.
+        
+        let setChoice = prompt('🍔세트 or 단품🍔')
+
+        //step4
+        //  4-1. 만약 사용자가 '단품'이라고 입력했을 경우, 햄버거 함수만 호출
+        //  4-2. 만약 사용자가 '세트'라고 입력햇을 경우, 햄버거/콜라/감튀 함수 모두 호출
+        //  4-3. 맨 마지막 출에는 '지불하실 가격은 nnn원 입니다.'
+
+        
+        
+    </script>
+</body>
+</html>

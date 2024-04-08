@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 반복문
+        - 우리는 반복문이 왜 필요할까?
+        - 개발자가 하기 싫어하는 일 => 같은 일 반복해서 하는 거
+
+        (1) for문
+        for (초기화식; 종료조건; 증감식) {
+            반복하는 동안 실행할 로직
+        }
+        - 증감식에 i+2, i+3 등 넣을 수 o
+        - 계속해서 현재 상황과 조건을 비교하며 만족시킬 때까지 반복 진행
+        */
+       console.log(1)
+       console.log(2)
+       console.log(3)
+       console.log(4)
+       console.log(5)
+
+       //나는 i부터 시작할 건데 i는 1부터야. i가 5보다 작거나 같을때까지만 실행할거야
+       //한 번 실행 될 때마다 i를 1씩 증가시킬게
+       for(let i = 1; i <= 5; i++){
+            console.log('for:', i)
+       }
+
+       /* 위 코드가 실행되는 흐름
+       1) 내 반복문의 카운터 역할을 하는 i의 초기값을 1로 지정
+       2) 현재 상태 i = 1 / 조건에 만족 => i++ 실행 => 출력
+       3) 현재 상태 i = 2 / 조건에 만족 => i++ 실행 => 출력
+       ...(반복)
+       4) 현재 상태 i = 6 / 조건에 만족x => for 문 탈출! 
+       */
+        
+       //예제! 1부터 1000까지 더한 값을 문서에 출력
+       //   결과) 1부터 1000까지 더한 값은 500500입니다.
+
+       let sum = 0; // sum만 초기화하면 undefined
+
+       for(let i = 1; i <= 1000; i++){
+        //누적연산자 사용
+        sum += i
+       }
+       document.write(`1부터 1000까지 더한 값은 ${sum}입니다`)
+
+    //    console.log('sum: ', sum)
+    //    console.log('i :', i) -> reference error뜸, define되지 않았어!
+    /*
+       위 아래 둘 다 for문에서 i가 있는데 let은 재선언이 x, but 오류가 나지 않는 이유?
+       지역 변수이기 때문에 특정 구문 내에서만 작동
+       전역적인 공간에서는 i가 없음
+
+       sum은 이 script 내 모든 공간에서 사용되는 전역변수
+    */
+
+    
+    </script>
+</body>
+</html>

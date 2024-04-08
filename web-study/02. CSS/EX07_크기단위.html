@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #px{
+            font-size: 10px;
+        }
+        /* 
+        em: 부모의 크기를 기준으로 하는 상대 배수 단위
+        ex) 2em: 부모요소 크기의 2배 */
+        #em{
+            font-size: 2em;
+
+        }
+        #rem{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- span#px -->
+    <span id="px">px로 조정</span>
+
+    <!-- p>span#em -->
+    <p>
+        <span id="em">
+            em으로 조정
+        </span>
+    </p>
+    <!-- span#rem -->
+    <span id="rem">rem으로 조정</span>
+</body>
+</html>

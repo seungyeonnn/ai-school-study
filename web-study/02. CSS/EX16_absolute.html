@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 500px;
+            height: 600px;
+            background-color: gray;
+        }
+         .box{
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid black; */
+        }
+        
+        .child1{
+            background-color: #ff4949;
+            position: absolute;
+            /* absolute만 적용되면 부모요소를 벗어난거라 자리에 x,
+             밑에 있던 애들이 그 자리를 채우기 위해 위로 올라옴
+             노랑이 원래 child1 자리(현재 부모요소의 child1자리는 비어있음. child1이 벗어나서),
+              파랑이 chid2자리로 오게됨 */
+            right: 20px;
+            bottom: 0;
+        }
+        
+        .child2{
+            background-color: #f9ca24;
+           
+        }
+        .child3{
+            background-color: #0984e3;
+            position: relative;
+            right: 20px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <!-- box class와 child 1,2,3를 가진 div -->
+        <div class="box child1"></div>
+        <div class="box child2"></div>
+        <div class="box child3"></div>
+        
+        
+    </div>
+</body>
+</html>

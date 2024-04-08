@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체 Object: 속성과 값으로 구성된 데이터의 집합
+
+        // 1. 객체의 선언
+        // 객체의 괄호는 중괄호 { }
+        let person = {
+            name : '유승연',
+            birthYear : 1998,
+            group: 'JS-A'
+        }
+
+        //2. 객체의 출력
+        console.log(person)
+
+        //3. 객체 내 데이터에 접근하는 방법
+        // case 1) 객체이름.key이름
+        console.log(person.name)
+        // case 2) 객체이름['key이름']
+        console.log(person['name'])
+
+        //4. 객체 내 데이터 변경하기
+        person.name = '안유진'
+        console.log(person)
+
+        // 배열 안에 객체를 넣을 수 있고 객체 안에 배열을 넣을 수 있다
+        // (1) 배열 안에 객체를 넣어보자!
+        let orderList = [{
+            name: '아메리카노',
+            place: 'takeout',
+            stamp: true
+        }, {
+            name: '카페라떼',
+            place: 'here',
+            stamp: false
+        },{
+            name: '밀크티',
+            place: 'here',
+            stamp: true
+        }]
+
+        console.log('배열 안에 객체',orderList)
+        
+        // 만약 '카페라떼'를 출력?
+        // 배열에 접근   => 객체에 접근
+        // 배열이름[인덱스번호].key 값
+        console.log(orderList[0].name)
+
+        // (2) 객체 안에 배열을 넣어보자!
+        let person2 = {
+            name : '유승연',
+            feature : ['집','맛있는거','게임']
+        }
+        console.log(person2)
+        //만약 게임을 출력하려면
+        //객체에 접근 => 배열에 접근
+        console.log(person2.feature[2])
+
+
+        // ** 신문법 time **
+        // 비구조화 할당
+        let {hhd, syp, jbk} = {
+            hhd : '아이스티',
+            syp : '아메리카노',
+            jbk : '아메리카노'
+        }
+        console.log(syp)
+        // 함수명 대신 key값 넣어주면 해당 키값을 변수처럼 사용할 수 o
+
+    </script>
+</body>
+</html>

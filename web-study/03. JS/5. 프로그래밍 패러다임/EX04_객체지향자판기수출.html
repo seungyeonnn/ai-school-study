@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Machine {
+            // lang은 언어를 넣어줄 변수
+            constructor(money, water, coke, juice, lang){
+                this.money = parseInt(prompt(lang.msg1))
+                this.menu = prompt(lang.msg2)
+                this.water = water; 
+                this.coke = coke ; 
+                this.juice = juice;
+                this.lang = lang 
+                // 안에서 사용하려면 초기화 필수!!
+                // 이 class 안에서의 lang이 내가 가져온 lang이야
+            }
+
+            exportProduct(){
+                console.log('export Product Function')
+                if (this.menu == 1) {
+                    this.money = this.money - 700
+                    this.water--;
+                    alert(this.lang.msg3)
+                } else if (this.menu == 2) {
+                    this.money -= 1500;
+                    this.coke--;
+                    alert(this.lang.msg4)
+                } else if (this.menu == 3) {
+                    this.money -= 2000;
+                    this.juice--;
+                    alert(this.lang.msg5)
+                }
+            }
+            changes(){
+                // if 잔돈 1700 
+                let price1000 = parseInt(this.money/1000)
+                let price500 = parseInt((this.money%1000)/500)
+                let price100 = parseInt(((this.money%1000)%500)/100)
+
+                alert(this.lang.changeMsg(price1000, price500, price100))
+
+            }
+        }
+
+        /* 한국어로 된 안내 문구를 넣어줄 것
+        1. 돈을 넣어주세요
+        2. 무엇을 드시겠습니까?\n [1]물 - 700원 [2] 콜라 - 1500원 [3] 주스 - 2000원
+        3. 물 나왔습니다!
+        4. 콜라 나왔습니다~
+        5. 주스 나왔습니다~
+        6. 잔돈입니다~ 천원짜리 ${price1000}장, 오백원짜리 ${price500}개, 백원짜리 ${price100}개입니다.
+
+        */
+        class korMsg{
+            constructor(){
+                this.msg1 = '돈을 넣어주세요'  //이 클래스의 msg1은 돈을~ 
+                this.msg2 = '무엇을 드시겠습니까?\n [1]물 - 700원 [2] 콜라 - 1500원 [3] 주스 - 2000원'
+                this.msg3 = '물 나왔습니다!'
+                this.msg4 = '콜라 나왔습니다~'
+                this.msg5 = '주스 나왔습니다~'
+            }
+            // 딱히 받아올 게 없으면 constructor 사용해서 넣어줌
+            // 잔돈 메세지는 매개변수를 넣어줘야해서 함수형태로 써줘야함
+            changeMsg(price1000, price500, price100){
+                return `잔돈입니다~ 천원짜리 ${price1000}장, 오백원짜리 ${price500}개, 백원짜리 ${price100}개입니다.`
+            }
+        }
+
+        class engMsg{
+            constructor(){
+                this.msg1 = 'Insert your coin please'  //이 클래스의 msg1은 돈을~ 
+                this.msg2 = 'What do you want?\n [1] water - 700won [2] coke - 1500won [3]juice - 2000won'
+                this.msg3 = 'Here your water!'
+                this.msg4 = 'Here your coke'
+                this.msg5 = 'Here your juice~'
+            }
+            // 딱히 받아올 게 없으면 constructor 사용해서 넣어줌
+            // 잔돈 메세지는 매개변수를 넣어줘야해서 함수형태로 써줘야함
+            changeMsg(price1000, price500, price100){
+                return `Here your 1000won ${price1000}, 500won ${price500}, 100won ${price100}`
+            }
+        }
+
+
+
+        // const koreaMachine = new Machine(0,5,10,7, new korMsg())
+        // //여기서 new korMsg()를 줘서 lang에 이 클래스가 들어갈 수 있는 것
+        // koreaMachine.exportProduct()
+        // koreaMachine.changes()
+
+        const engMachine = new Machine(0, 10, 10, 10, new engMsg())
+        engMachine.exportProduct()
+        engMachine.changes()
+    </script>
+</body>
+</html> 

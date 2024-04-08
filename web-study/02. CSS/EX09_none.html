@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #answer{
+            display: none;
+        }
+        /* 
+        1. id가 question인 요소 위에 마우스를 올리면 #question:hover
+        2. 옆에 있는 id 가 answer인 요소를 보이도록 +#answer*/
+        #question:hover+#answer{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h3>Quiz</h3>
+    <span id="question">Q. 여러분은 비오는 거 좋아하시나요?</span>
+    <span id="answer">네 좋아합니다!</span>
+</body>
+</html>

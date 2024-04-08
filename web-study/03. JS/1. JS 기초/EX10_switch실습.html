@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            오늘은 인공지능사관학교 개강일! 
+            들어오는 교육생 분들에게 어디 반인지 물어보고
+            해당 강의장을 안내하는게 미션~ 
+
+            JSA => 1강의장 
+            JSB => 2강의장 
+            사물지능A => 3강의장
+            사물지능B => 4강의장 
+            Spring => 5강의장 
+
+            => 문서에 글을 작성 할 예정 (document.write())
+            <h1>환영합니다 1강의장입니다.</h1>
+            <p>앞에 놓인 서류를 작성해주세요. </p>
+        */
+
+        let aiClass = prompt("어느 반이신가요?")
+
+        /* 표현식 사용하기
+        1) 백틱 (``)으로 감싸준다 -> Tab키 위에 있는 기호, 넘기는 엔터까지도 인지
+        2) 변수를 ${ } 으로 감싸준다
+        
+        Q. 언제 사용하면 편할까요? A. 문자+변수, 변수가 2개 이상이라면 사용하기 편함
+        Q. 필수적으로 사용해야 하나요? A. 아뇨~ 편한거 쓰세요~
+        */
+
+        switch (aiClass) {
+            case 'JSA' : 
+                document.write(`<h1>환영합니다 1강의장입니다.</h1> <p>${aiClass} 과정입니다</p>`)
+                break;
+            case 'JSB' : 
+                document.write(`<h1>환영합니다 2강의장입니다.</h1> <p>${aiClass} 과정입니다</p>`)
+                break;
+            case '사물지능A':
+                document.write(`<h1>환영합니다 3강의장입니다.</h1> <p>${aiClass} 과정입니다</p>`)
+                break;
+            case '사물지능B':
+                document.write(`<h1>환영합니다 4강의장입니다.</h1> <p>${aiClass} 과정입니다</p>`)
+                break;
+            case 'Spring' : 
+                document.write(`<h1>환영합니다 1강의장입니다.</h1> <p>${aiClass} 과정입니다</p>`)
+            default: document.write('3층으로 가세요')
+            }
+    </script>
+</body>
+</html>

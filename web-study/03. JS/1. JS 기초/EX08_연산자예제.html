@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = parseInt(prompt("첫 번째 정수 입력"))
+        let num2 = parseInt(prompt("두 번째 정수 입력"))
+
+        console.log('두 수의 더하기 :', (parseInt(num1+num2)))
+        console.log('두 수의 빼기 :', num1-num2)
+        //console.log('두 수의 빼기 :'+ num1-num2) 이면 에러, 문자열 + 문자열하고 문자열 - 문자열 돼서
+        console.log('두 수의 곱하기 :', num1*num2) // * / 가 우선이라 계산이 됨
+        console.log('두 수의 나누기 :', num1/num2)
+    </script>
+</body>
+</html>

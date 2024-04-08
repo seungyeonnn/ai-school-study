@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 배열 
+        - 수많은 데이터 중에서 연관된 데이터를 하나에 담는 공간 
+        ex) 공동주택 우편함(배열) vs 단독주택 우편함 (변수)
+        - 공동주택에 우편함을 모아두는 이유는? 효율 
+        - 공동주택 우편함에는 호수를 표시하는 101호, 102호 문구 존재 
+        => 우편함을 구별하기 위해서 
+        - 배열에는 데이터를 구분 할 수 있는 인덱스번호가 존재 
+        - 그 인덱스 번호는 0부터 시작 
+        */
+
+        // 1. 배열의 선언
+        //let 배열이름 = []
+        // ** undefined으로 선언하지 말 것
+        //  let menuList;
+        let menuList = ['아메리카노', '민트초코', '바닐라라떼']
+
+        // 2. 배열의 확인
+        console.log(menuList)
+
+        // 3. 배열 내 특정 데이터에 접근
+        console.log(menuList[1], "나왔습니다~")
+
+        // 4. 배열 내 값 변경
+        menuList[2] = '돌체라떼'
+        console.log('new list:', menuList)
+
+        // 5. 배열의 길이 확인
+        console.log(menuList.length)
+
+        // 6. 배열 내 전체 데이터 출력
+        for (let i = 0; i < menuList.length; i++) {
+            console.log('모든메뉴:', menuList[i])
+        }
+
+        // ** 배열 함수: 배열을 쉽게 사용하도록 제공해주는 함수 **
+
+        let lunch = ['국밥', '제육볶음', '백반', '짬뽕']
+
+        // 1. 마지막 인덱스에 값을 넣어주기! : push
+        lunch.push('KT 구내식당')
+        console.log('현재 lunch',lunch)
+
+        // 2. 마지막 인덱스의 값을 빼준다: pop
+        lunch.pop()
+        console.log('현재 lunch', lunch)
+
+        // 3. 해당 아이템이 배열 내에 포함 되어 있는지 검사: includes()
+        console.log( lunch.includes('짜장면'))
+
+        // 4. 해당 아이템의 인덱스 번호 확인: indexOf()
+        console.log(lunch.indexOf('국밥'))
+
+        // 5. slice() 추출(유닛) vs splice() 제거/재구성(탈퇴)
+
+        // 5-1) slice
+        // 배열이름.slice(시작인덱스, 끝내는 인덱스+1)
+
+        let unit = lunch.slice(0,3)
+        console.log(unit)
+        console.log(lunch)
+
+        // 5-2) splice
+        // 배열이름.splice(시작인덱스, 제거할 개수, 대체값)
+        // 제거할 개수 0이면 추가만 되고 대체값이 없으면 대체값 비워놓기
+        lunch.splice(1,2,'냉면')
+        console.log(lunch)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 5px solid lightgreen;
+        }
+
+        img {
+            width: 200px;
+        }
+    </style>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <!-- 내가 쓸 스크립트 이전에만 나오면 됨, 혹시 모를 일에 대비해서 head태그 -->
+</head>
+
+<body>
+    <div>
+        <img src="./pic/pic1.jpg" alt="">
+
+    </div>
+    <br />
+
+
+    <button id="btn1">부모요소 내부 앞쪽에 추가</button>
+    <button id="btn2">부모요소 내부 뒷쪽에 추가</button>
+    <button id="btn3">부모요소 외부 앞쪽에 추가</button>
+    <button id="btn4">부모요소 외부 뒷쪽에 추가</button>
+    <button id="btn5">img 태그 삭제</button>
+    <button id="btn6">한 요소를 비워주기</button>
+    <button id="btn7">부모요소에 접근하기</button>
+
+    <script>
+        $('#btn1').on('click', () => {
+            console.log('ck')
+            // [게시판에서 뭔가를 눌렀을 때 나오는 게시판 만들 때 사용, 누적됨]
+            // 1. prepend: 해당요소 앞쪽에 요소를 추가하는 방법
+            // 범위는 요소 내부 (div 안쪽)
+            $('div').prepend('<img src="./pic/pic2.png">')
+        })
+        $('#btn2').on('click', () => {
+            //2. append : 해당 요소 뒤쪽에 요소를 추가하는 방법
+            // 범위는 요소내부 (div 안쪽)
+            $('div').append('<img src="./pic/pic3.jpg">')
+        })
+
+        //div 외부
+        $('#btn3').on('click', () => {
+            //3. before: 해당요소 바깥 앞쪽에 요소를 추가하는 방법
+            $('div').before('<img src="./pic/pic4.jpg">')
+        })
+        $('#btn4').on('click', () => {
+            //4.after : 해당요소 바깥 뒷쪽에 요소를 추가하는 방법
+            $('div').after('<img src="./pic/pic5.jpg">')
+        })
+    </script>
+</body>
+
+</html>

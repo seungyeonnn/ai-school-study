@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*while문
+        - ~하는 동안
+        - 조건이 true인 동안 명령 반복 -> false가 될 때까지
+        while(조건){
+            조건이 반복되는 동안 실행될 로직
+        }
+        for문과의 차이점은 for문은 정확히 반복되는 범위를 알고 있고
+        while문은 내가 정확히 범위를 알지 못할 때 사용
+        ex) 1~5까지 반복: for
+            봉균쌤이 강의실로 들어올 때까지 반복: while
+        */
+
+        let i = 0
+        while (i < 10) {
+            console.log('while문', i + 1)
+            i++
+        }
+
+        let j = 568
+        while(true){
+            if (j%2 == 0){
+                console.log('2의 배수입니다.')
+                break
+            } else {
+                console.log('2의 배수가 아닙니다.')
+                break
+            }
+        }
+
+    </script>
+</body>
+
+</html>

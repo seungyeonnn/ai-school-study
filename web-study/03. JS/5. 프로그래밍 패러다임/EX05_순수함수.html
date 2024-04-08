@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        [프로그래밍 패러다임]
+        - 패러다임이란? : 한 시대의 사람들이 견해나 사고를 근본적으로 규정하고 있는 인식의 체계
+        - 프로그래밍에도 패러다임이 존재함.
+        - 메모리, 발전하는 it기술, 하드웨어 기술의 발전 등 수많은 변수들로 인해 
+          기존의 프로그래밍 방식으로는 처리할 수 없는 현상들이 생겨나게됨 (스파게티 코드, 에일리언 코드 등)
+        - 프로그래밍에도 패러다임이 존재하고, 위와 같은 변수들로 인해 패러다임이 변하게 됨
+        - 특히 React.js는 함수형 프로그래밍을 권장하고 있음
+        - 절차지향이 틀린 프로그래밍이 아님 규모가 작은 코드에서는 절차지향이 가장 효과적일 수 있음
+
+        [함수형 프로그래밍 (Functional Programming)]
+        - 부수효과가 없는 순수함수를 1급 객체로 간주하여 파라미터나 반환값으로 사용할 수 있고
+          참조 투명성을 지킬 수 있음
+        - 대표적으로 함수형 프로그래밍을 사용하는 라이브러리는 React.js
+        - 함수에 항상 동일한 인자를 넣으면 동일한 결과만 반환되어 동일하게 실행 결과를 
+          예측할 수 있는 프로그래밍 -> 함수형 프로그래밍
+
+        - 부수효과가 없는 순수함수란?
+          > 동일한 인자가 들어갈 경우 항상 값이 도출되는 함수
+          > 부수적인 그 외의 효과 외에 영향을 받지 않음
+        
+        */
+
+        // 순수 함수의 예시
+        // - 동일한 인자가 들어갈 경우, 항상 같은 값이 반환된다.
+        function minus(num1, num2){
+            return num1 - num2
+        }
+
+        let minusNum = minus(10,5)
+        console.log('minus: ', minusNum)
+
+        // 순수함수가 아닌 경우
+        let num = 10
+        function multi(num1, num2){
+            return num1*num2*num3
+        }
+        multiNum = multi(2,3)
+        console.log('multi: ', multiNum)
+
+    </script>
+</body>
+</html>

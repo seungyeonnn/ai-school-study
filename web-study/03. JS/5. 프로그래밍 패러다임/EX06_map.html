@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Map함수
+        - 배열함수의 한 종류
+        - 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모야 
+          새로운 배열을 반환한다
+
+        */
+
+        let arr1 = [1, 2, 3, 4]
+        // 만약 내가 arr1 안에 있는 모든 데이터를 *2 해주고 싶다면?
+        // -> map 함수 이용
+        // let newArr1 = arr1.map((item) =>{return item*2})   //item은 arr1에 있는 애들을 변수로 넣어줄 곳
+        // console.log('newArr1: ',newArr1)
+        
+        // lamda식 괄호들을 생략하고 return문 생략 가능
+        let newArr1 = arr1.map(item => item*2)   
+        // arr1을 모두 가져올거야
+        //item은 arr1에 있는 애들을 변수로 넣어줄 곳이야
+        // item *2 해서 새로운 배열로 반환해줄게
+        console.log('newArr1: ',newArr1)
+
+
+
+        // Q. 선생님 이름을 만들어보자
+        let nameArr = ['황해도', '선영표', '정봉균']
+        // 황해도 선생님, 선영표 선생님, 정봉균 선생님이라는 데이터가 포함된
+        // 새로운 배열을 만들어주고 싶다! 
+        // let newNameArr = nameArr.map((item,idx) => (idx+1)+'번째 '+item+' 선생님')
+
+        //인자가 한 개일 때는 그냥 작성, 인자가 두개일 때는 (item, idx)
+        // 명령문이 return 한줄 일때는 (위) 람다식 이용 가능, 두 줄 이상일 때는 {return}
+        let newNameArr = nameArr.map((item,idx) => {
+            console.log('새로운 배열이다')
+            return (idx+1)+'번째 '+item+' 선생님'
+        })
+        console.log('newNameArr: ', newNameArr)
+        // 인덱스를 가져올 수 있음. 매개변수로 idx
+
+
+        // 객체가 들어있는 배열도 map으로 관리해보자
+        let studentList = [
+            {name: '김유열', score: 90},
+            {name: '이명인', score: 100},
+            {name: '정은우', score: 80}
+        ]
+
+        const toHalf = (obj) => {
+            
+            return {
+                ...obj, 
+                score: obj.score / 2
+            }
+            // ...obj
+            // 스프레드 / 바뀐부분 제외하고 나머지 객체는 그대로 유지시켜줘
+            // 기존 객체의 값 중, 변화가 없는 나머지 속성은 그대로 유지!
+            // 스프레드 ...
+        }
+        const mappedList = studentList.map(toHalf)
+        console.log(mappedList)
+
+
+        //도시의 화씨 데이터를 섭씨 데이터로 변환해보자!
+        // 섭씨 = 5/9*(화씨-32)
+
+        const cityArr = [
+            {city: 'Seoul', temp: 86},
+            {city: 'Gwangju', temp: 89},
+            {city: 'Busan', temp: 90}
+        ]
+        //섭씨 데이터를 화씨 데이터로 변환, 도시이름  그대로 유지
+        const toCelcius = (obj) => {
+            return {
+                ...obj, 
+                temp: parseInt(5/9*(obj.temp-32))
+            }
+        }
+        // 값이 아니라 객체를 리턴하는거라 return { 중괄호 } 써야함
+        const mappedCity = cityArr.map(toCelcius)
+        console.log(mappedCity)
+    </script>
+</body>
+</html>

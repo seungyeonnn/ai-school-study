@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // add(10, 20) -> 함수 선언 전에 호출해도 add 뜸, 호이스팅 현상 때문에 일어남
+
+        // 함수: 특정 기능을 따로 빼놓는 것
+        // -> 필요할 때마다 불러와서 사용할 수 있음
+        // 함수 구조 -> 함수 선언문
+        // 리턴과 매개변수는 생략가능하다
+        // 매개변수는 지역변수이다
+        function add (num1, num2) {
+            //실행로직
+            let result = num1 + num2
+            //반환값
+            //return result
+            console.log(result)        
+        }
+
+       console.log(add(10, 20)) //함수호출 -> 이 위치로 반환 받겠습니다
+        
+       function hello (){
+            console.log('hello javascript')
+       }
+
+       hello()
+
+       //minus, mul(곱하기), div(나누기) 각각의 함수를 만들어서
+       //결과값을 출력시켜주세용 (10, 20)
+       let num1 = 10
+       let num2 = 20
+
+       function minus(a, b) {
+            console.log(a - b)
+       }
+       function mul(a, b) {
+            console.log(a * b)
+       }
+       function div(a, b) {
+            console.log(a / b)
+       }
+
+       minus(num1, num2)
+       mul(num1, num2)
+       div(num1, num2)
+
+       let number1 = 10
+       let numner2 = 20
+       let op = '-'
+
+       function cal (num1, num2, oper){
+        //oper에 담긴 값에 따라 num1, num2의 연산 결과 값을 반환 해주는 기능
+        switch (oper){
+            case '+':
+                return num1 + num2
+            case '-' :
+                return num1 - num2
+            case '*' :
+                return num1 * num2
+            case '/' :
+                return num1 / num2
+        }
+
+    //     if(oper == "+"){
+    //             return num1 + num2
+    //         }
+    //         else if(oper == "-"){
+    //             return num1 - num2
+    //         }
+    //         else if(oper == "*"){
+    //             return num1 * num2
+    //         }
+            
+    //         else if(oper == "/"){
+    //             return num1 / num2
+    //         }
+       }
+       console.log(op+'의 결과 : '+cal(number1, numner2, op))
+
+
+       //호이스팅 현상으로 인해 함수를 선언하기 이전에 함수호출이 가능 -> 방지해야
+       
+    //    const makeJuice = function(){
+    //         console.log('주스 제조 완성!')
+    //    }
+
+    // 화살표 함수 Arrow Function (ES6의 신문법)
+        /*
+            const 함수이름 = (매개변수) => {
+                로직
+            }
+        */
+
+    
+       const makeJuice = () => {
+            console.log('주스 제조 완성!')
+       }
+       
+
+    </script>
+</body>
+</html>

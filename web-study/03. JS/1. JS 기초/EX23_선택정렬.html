@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //2. 선택정렬
+        //- 기준 위치를 정한다
+        //- 나머지 요소 중 가장 잘 어울리는 값을 탐색
+        //- 기준 위치에 어울리는 값을 할당하고 step 종료
+        let arr = [13, 56, 9, 1, 23]
+
+        //1 step -> 기준 [0], 탐색하면서 가장 작은 것을 base에 담음
+        let base = arr[0]
+
+        for (let i =1; i<=4; i++){
+            if (base > arr[i]){
+            let temp = base
+            base = arr[i]
+            arr[i] = temp
+        }
+        }
+
+        arr[0] = base //기준이 되는 자리에 base에 있는 놈 넣기
+        console.log(arr)
+
+        //2 step -> 기준 [1], 탐색하면서 가장 작은 것을 base에 담음
+        // base = arr[1]
+        // if(base > arr[2]){
+        //     let temp = base
+        //     base = arr[2]
+        //     arr[2] = temp
+        // }
+        // if(base > arr[3]){
+        //     let temp = base
+        //     base = arr[3]
+        //     arr[3] = temp
+        // }
+        // if(base > arr[4]){
+        //     let temp = base
+        //     base = arr[4]
+        //     arr[4] = temp
+        // }
+        // arr[1] = base
+        // console.log(arr)
+        
+        base = arr[1]
+        for(i=2; i<=4; i++){
+            if(base > arr[i]){
+            let temp = base
+            base = arr[i]
+            arr[i] = temp
+        }
+        }arr[1] = base
+        console.log(arr)
+
+        base = arr[2]
+        for(i=3; i<=4; i++){
+            if(base > arr[i]){
+            let temp = base
+            base = arr[i]
+            arr[i] = temp
+        }
+        }arr[2] = base
+        console.log(arr)
+3
+        base = arr[3]
+        for(i=4; i<=4; i++){
+            if(base > arr[i]){
+            let temp = base
+            base = arr[i]
+            arr[i] = temp
+        }
+        }arr[3] = base
+        console.log(arr)
+
+        base = arr[4]
+        for(i=4; i<=4; i++){
+            if(base > arr[i]){
+            let temp = base
+            base = arr[i]
+            arr[i] = temp
+        }
+        }arr[4] = base
+        console.log(arr)
+
+        
+
+
+    </script>
+    
+</body>
+</html>

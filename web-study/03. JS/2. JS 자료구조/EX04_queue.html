@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Queue (큐)
+        - 먼저 들어온 것이 먼저 나가는 선입선출 구조
+        - First In, First Out (FIFO)
+        ex) 카페에서 먼저 주문한 손님의 음료가 먼저 나가는 것
+            은행에서 번호표 순서대로 업무가 나가는 것        
+        
+            삽입 = 인큐
+            삭제 = 디큐
+            프로세스 관리 (큐)
+        */
+
+        let array = []
+        let index = 0
+
+        let enqueue = (num) => {
+            // 배열의 맨 마지막에 데이터를 추가
+            array[index] = num
+            index ++
+            console.log('array', array)
+        }
+
+        let dequeue = () => {
+            //배열의 맨 앞 데이터가 삭제
+            array.splice(0, 1)
+            //enqeue를 위해 배열 index를 줄여야함
+            index--
+            console.log('array',array)
+
+           
+        }
+
+        while(true){
+            let menu = prompt('1. 입력 2. 출력 3. 종료')
+            if (menu == 1) {
+                let data = prompt('데이터 입력')
+                enqueue(data)
+            } else if (menu == 2){
+                dequeue()
+            }else{
+                break
+            }
+        }
+
+
+    </script>
+</body>
+</html>

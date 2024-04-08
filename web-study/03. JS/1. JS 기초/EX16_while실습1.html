@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>4의 배수일까 아닐까?</h1>
+    <script>
+        //step1. 사용자에게 숫자 입력받기
+        //step2. 입력 받은 숫자의 4의 배수여부 판단
+        //step3. 만약 4의 배수라면 문서에 XXX는 4의 배수입니다. (document.write)
+        //step4. 만약 4의 배수가 아니라면 step1으로 돌아감
+
+        while (true) {
+            let num = prompt('숫자 입력')
+            if (num % 4 == 0) {
+                document.write(num, '은(는) 4의 배수입니다')
+                break
+            }
+        }
+    </script>
+
+</html>
